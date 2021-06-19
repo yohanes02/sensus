@@ -1,0 +1,101 @@
+nik,nama,tempat_lahir,tanggal_lahir,jenis_kelamin,alamat,rt,rw,agama,bekerja
+317506100200001,A,jakarta,2/8/2000,P,kp pisangan,1,1,Kristen Protestan,Y
+317506100200002,A,jakarta,2/9/2000,P,kp pisangan,1,1,Kristen Protestan,Y
+317506100200003,A,jakarta,2/10/2000,L,kp pisangan,1,1,Kristen Protestan,Y
+317506100200004,A,jakarta,2/11/2000,L,kp pisangan,1,1,Islam,Y
+317506100200005,A,jakarta,2/12/2000,L,kp pisangan,1,1,Islam,Y
+317506100200006,A,jakarta,2/13/2000,L,kp pisangan,1,1,Islam,Y
+317506100200007,A,jakarta,2/14/2000,L,kp pisangan,1,1,Islam,Y
+317506100200008,A,jakarta,2/15/2000,L,kp pisangan,1,1,Islam,T
+317506100200009,A,jakarta,2/16/2000,L,kp pisangan,1,1,Islam,T
+317506100200010,A,jakarta,2/17/2000,L,kp pisangan,1,1,Islam,T
+317506100200011,A,jakarta,2/18/2000,P,kp pisangan,2,2,Islam,T
+317506100200012,A,jakarta,2/19/2000,P,kp pisangan,2,2,Islam,Y
+317506100200013,A,jakarta,2/20/2000,P,kp pisangan,2,2,Islam,Y
+317506100200014,A,jakarta,2/21/2000,P,kp pisangan,2,2,Islam,Y
+317506100200015,A,jakarta,2/22/2000,P,kp pisangan,2,2,Islam,Y
+317506100200016,A,jakarta,2/23/2000,P,kp pisangan,2,2,Islam,Y
+317506100200017,A,jakarta,2/24/2000,P,kp pisangan,2,2,Islam,Y
+317506100200018,A,jakarta,2/25/2000,P,kp pisangan,2,2,Islam,Y
+317506100200019,A,jakarta,2/26/2000,P,kp pisangan,2,2,Islam,Y
+317506100200020,A,jakarta,2/27/2000,P,kp pisangan,2,2,Islam,Y
+317506100200021,A,jakarta,2/28/2000,P,kp pisangan,3,3,Islam,Y
+317506100200022,A,jakarta,2/29/2000,P,kp pisangan,3,3,Islam,T
+317506100200023,A,jakarta,3/1/2000,P,kp pisangan,3,3,Islam,T
+317506100200024,A,jakarta,3/2/2000,P,kp pisangan,3,3,Islam,T
+317506100200025,A,jakarta,3/3/2000,P,kp pisangan,3,3,Islam,Y
+317506100200026,A,jakarta,3/4/2000,P,kp pisangan,3,3,Islam,Y
+317506100200027,A,jakarta,3/5/2000,L,kp pisangan,3,3,Islam,Y
+317506100200028,A,jakarta,3/6/2000,L,kp pisangan,3,3,Islam,Y
+317506100200029,A,jakarta,3/7/2000,L,kp pisangan,3,3,Islam,Y
+317506100200030,A,jakarta,3/8/2000,L,kp pisangan,3,3,Islam,Y
+317506100200031,A,jakarta,3/9/2000,L,kp pisangan,3,3,Islam,Y
+317506100200032,A,jakarta,3/10/2000,L,kp pisangan,4,4,Islam,T
+317506100200033,A,jakarta,3/11/2000,L,kp pisangan,4,4,Islam,T
+317506100200034,A,jakarta,3/12/2000,L,kp pisangan,4,4,Kristen Katolik,T
+317506100200035,A,jakarta,3/13/2000,L,kp pisangan,4,4,Kristen Katolik,T
+317506100200036,A,jakarta,3/14/2000,L,kp pisangan,4,4,Kristen Katolik,T
+317506100200037,A,jakarta,3/15/2000,L,kp pisangan,4,4,Kristen Katolik,Y
+317506100200038,A,jakarta,3/16/2000,L,kp pisangan,4,4,Kristen Katolik,Y
+317506100200039,A,jakarta,3/17/2000,L,kp pisangan,4,4,Kristen Katolik,Y
+317506100200040,A,jakarta,3/18/2000,L,kp pisangan,4,4,Kristen Katolik,Y
+317506100200041,A,jakarta,3/19/2000,L,kp pisangan,4,4,Kristen Katolik,Y
+317506100200042,A,jakarta,3/20/2000,L,kp pisangan,4,4,Kristen Katolik,Y
+317506100200043,A,jakarta,3/21/2000,L,kp pisangan,4,4,Kristen Katolik,Y
+317506100200044,A,jakarta,3/22/2000,L,kp pisangan,5,5,Kristen Protestan,Y
+317506100200045,A,jakarta,3/23/2000,L,kp pisangan,5,5,Kristen Protestan,Y
+317506100200046,A,jakarta,3/24/2000,L,kp pisangan,5,5,Kristen Protestan,Y
+317506100200047,A,jakarta,3/25/2000,P,kp pisangan,5,5,Kristen Protestan,Y
+317506100200048,A,jakarta,3/26/2000,P,kp pisangan,5,5,Kristen Protestan,Y
+317506100200049,A,jakarta,3/27/2000,P,kp pisangan,5,5,Kristen Protestan,T
+317506100200050,A,jakarta,3/28/2000,P,kp pisangan,5,5,Kristen Protestan,T
+317506100200051,A,jakarta,3/29/2000,P,kp pisangan,5,5,Kristen Protestan,Y
+317506100200052,A,jakarta,3/30/2000,P,kp pisangan,5,5,Kristen Protestan,Y
+317506100200053,A,jakarta,3/31/2000,P,kp pisangan,5,5,Islam,Y
+317506100200054,A,jakarta,4/1/2000,P,kp pisangan,5,5,Islam,Y
+317506100200055,A,jakarta,4/2/2000,P,kp pisangan,5,5,Islam,Y
+317506100200056,A,jakarta,4/3/2000,P,kp pisangan,6,6,Islam,Y
+317506100200057,A,jakarta,4/4/2000,P,kp pisangan,6,6,Islam,Y
+317506100200058,A,jakarta,4/5/2000,P,kp pisangan,6,6,Islam,Y
+317506100200059,A,jakarta,4/6/2000,P,kp pisangan,6,6,Islam,Y
+317506100200060,A,jakarta,4/7/2000,P,kp pisangan,6,6,Islam,Y
+317506100200061,A,jakarta,4/8/2000,P,kp pisangan,6,6,Islam,Y
+317506100200062,A,jakarta,4/9/2000,P,kp pisangan,6,6,Islam,Y
+317506100200063,A,jakarta,4/10/2000,P,kp pisangan,6,6,Islam,Y
+317506100200064,A,jakarta,4/11/2000,L,kp pisangan,6,6,Islam,T
+317506100200065,A,jakarta,4/12/2000,L,kp pisangan,6,6,Islam,T
+317506100200066,A,jakarta,4/13/2000,L,kp pisangan,7,7,Islam,T
+317506100200067,A,jakarta,4/14/2000,L,kp pisangan,7,7,Islam,T
+317506100200068,A,jakarta,4/15/2000,L,kp pisangan,7,7,Islam,T
+317506100200069,A,jakarta,4/16/2000,L,kp pisangan,7,7,Islam,Y
+317506100200070,A,jakarta,4/17/2000,L,kp pisangan,7,7,Islam,Y
+317506100200071,A,jakarta,4/18/2000,L,kp pisangan,7,7,Islam,Y
+317506100200072,A,jakarta,4/19/2000,L,kp pisangan,7,7,Islam,Y
+317506100200073,A,jakarta,4/20/2000,L,kp pisangan,7,7,Islam,Y
+317506100200074,A,jakarta,4/21/2000,L,kp pisangan,8,8,Islam,Y
+317506100200075,A,jakarta,4/22/2000,L,kp pisangan,8,8,Islam,Y
+317506100200076,A,jakarta,4/23/2000,L,kp pisangan,8,8,Islam,Y
+317506100200077,A,jakarta,4/24/2000,L,kp pisangan,8,8,Islam,Y
+317506100200078,A,jakarta,4/25/2000,L,kp pisangan,8,8,Islam,Y
+317506100200079,A,jakarta,4/26/2000,L,kp pisangan,8,8,Islam,Y
+317506100200080,A,jakarta,4/27/2000,P,kp pisangan,8,8,Islam,Y
+317506100200081,A,jakarta,4/28/2000,P,kp pisangan,8,8,Islam,Y
+317506100200082,A,jakarta,4/29/2000,P,kp pisangan,8,8,Islam,Y
+317506100200083,A,jakarta,4/30/2000,P,kp pisangan,8,8,Islam,Y
+317506100200084,A,jakarta,5/1/2000,P,kp pisangan,8,8,Islam,T
+317506100200085,A,jakarta,5/2/2000,P,kp pisangan,8,8,Islam,T
+317506100200086,A,jakarta,5/3/2000,P,kp pisangan,9,9,Islam,T
+317506100200087,A,jakarta,5/4/2000,P,kp pisangan,9,9,Islam,T
+317506100200088,A,jakarta,5/5/2000,P,kp pisangan,9,9,Islam,Y
+317506100200089,A,jakarta,5/6/2000,P,kp pisangan,9,9,Islam,Y
+317506100200090,A,jakarta,5/7/2000,P,kp pisangan,9,9,Islam,Y
+317506100200091,A,jakarta,5/8/2000,P,kp pisangan,9,9,Islam,Y
+317506100200092,A,jakarta,5/9/2000,P,kp pisangan,9,9,Islam,Y
+317506100200093,A,jakarta,5/10/2000,P,kp pisangan,9,9,Islam,Y
+317506100200094,A,jakarta,5/11/2000,P,kp pisangan,10,10,Islam,Y
+317506100200095,A,jakarta,5/12/2000,P,kp pisangan,10,10,Islam,Y
+317506100200096,A,jakarta,5/13/2000,P,kp pisangan,10,10,Hindu,Y
+317506100200097,A,jakarta,5/14/2000,P,kp pisangan,10,10,Hindu,Y
+317506100200098,A,jakarta,5/15/2000,P,kp pisangan,10,10,Hindu,Y
+317506100200099,A,jakarta,5/16/2000,P,kp pisangan,10,10,Buddha,T
+317506100200100,A,jakarta,5/17/2000,P,kp pisangan,10,10,Buddha,T
