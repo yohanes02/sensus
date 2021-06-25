@@ -291,7 +291,7 @@ var obj = {
 				console.log(data[data.length-1][j]);
 				var nameSplit = data[data.length-1][j].name.split("rw");
 				var name = 'RW ' + nameSplit[1];
-				td = '<td>'+ index +'</td><td>'+ name +'</td><td>'+data[data.length-1][j].notWork+'</td><td>'+data[data.length-1][j].mindistance.toFixed(3)+'</td>';
+				td = '<td>'+ index +'</td><td>'+ name +'</td><td>'+data[data.length-1][j].notWork+' orang </td><td>'+data[data.length-1][j].mindistance.toFixed(3)+'</td>';
 				trBody += '<tr>'+td+'</tr>';
 				index++;
 			}
@@ -439,5 +439,6 @@ function chartDetail() {
 
 
 $(document).ready(function () {
+	console.log("TEST");
 	obj.init();
 });

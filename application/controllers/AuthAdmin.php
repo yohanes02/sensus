@@ -10,9 +10,15 @@ class AuthAdmin extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('components/header');
-		$this->load->view('admin/v_login_admin');
-		$this->load->view('components/footer');
+		if ($this->session->userdata('tipe_user') == 'admin') {
+      redirect('admin');
+    } elseif ($this->session->userdata('tipe_user') == 'warga') {
+      redirect('user');
+    } else {
+			$this->load->view('components/header');
+			$this->load->view('admin/v_login_admin');
+			$this->load->view('components/footer');
+		}
 	}
 
 	public function login()
@@ -27,6 +33,13 @@ class AuthAdmin extends CI_Controller
 			redirect('authAdmin');
 		}
 
+		$data_session = array(
+			'id' => $admin['id'],
+			'nama' => $admin['username'],
+			'tipe_user' => 'admin'
+		);
+
+		$this->session->set_userdata($data_session);
 		redirect('admin');
 	}
 }

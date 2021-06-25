@@ -1,45 +1,19 @@
 <div class="wrapper">
-	<header class="main-header-top hidden-print">
-		<a href="" class="logo"><img src="assets/images/logo-jkt.png" alt="" class="ing-fluid able-logo" style="width: 40px;"></a>
-		<nav class="navbar navbar-static-top">
-			<a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
-			<div class="navbar-custom-menu f-right">
-				<ul class="top-nav">
-					<li class="dropdown">
-						<a href="#!" role="button">
-							<!-- <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span> -->
-							<span>John <b>Doe</b> </span>
-						</a>
-						<a href="" role="button">
-							<span><i class="icon-logout"></i> Logout</span>
-						</a>
-						<ul class="dropdown-menu settings-menu">
-							<!-- <li><a href="#!"><i class="icon-settings"></i> Settings</a></li> -->
-							<li><a href="#"><i class="icon-user"></i> Profile</a></li>
-							<!-- <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li> -->
-							<li class="p-0">
-									<div class="dropdown-divider m-0"></div>
-							</li>
-							<!-- <li><a href="#"><i class="icon-lock"></i> Lock Screen</a></li> -->
-							<li><a href="login1.html"><i class="icon-logout"></i> Logout</a></li>
-
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</header>
+	<?php $this->load->view('components/navbar') ?>
 	<aside class="main-sidebar hidden-print">
 		<section class="sidebar" id="sidebar-scroll">
 			<ul class="sidebar-menu">
 				<li class="treeview">
-					<a href="" class="waves-effecr waves-dark"><i class="ti-desktop"></i><span>Dashboard</span></a>
+					<a href="<?= base_url('admin') ?>" class="waves-effecr waves-dark"><i class="ti-desktop"></i><span>Dashboard</span></a>
 				</li>
 				<li class="treeview">
-					<a href="" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Solusi</span></a>
+					<a href="<?= base_url('admin/berita') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Berita</span></a>
 				</li>
 				<li class="treeview">
-					<a href="" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
+					<a href=""<?= base_url('admin/laporan') ?>"" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
+				</li>
+				<li class="treeview">
+					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings"></i><span>Kelola Admin</span></a>
 				</li>
 			</ul>
 		</section>
@@ -153,7 +127,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-12">
+				<div class="col-lg-6 col-md-12" style="display: none;">
 					<div class="card">
 						<div class="card-header">
 							<h5 style=" text-align: center">Wilayah yang perlu di prioritaskan berdasarkan K-Mean</h5>
@@ -214,10 +188,3 @@
 		</div>
 	</div>
 </div>
-
-<script>
-	var body = document.querySelector('body');
-	body.classList.add('fixed');
-	body.classList.add('sidebar-mini');
-	console.log(body);
-</script>

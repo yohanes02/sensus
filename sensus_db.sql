@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 19, 2021 at 06:13 PM
+-- Generation Time: Jun 25, 2021 at 06:27 PM
 -- Server version: 5.7.33-0ubuntu0.16.04.1
 -- PHP Version: 5.6.40-50+ubuntu16.04.1+deb.sury.org+1
 
@@ -23,22 +23,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `solusi`
+--
+
+CREATE TABLE `solusi` (
+  `id` int(10) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `isi` text NOT NULL,
+  `foto` text,
+  `id_admin` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `solusi`
+--
+
+INSERT INTO `solusi` (`id`, `title`, `deskripsi`, `isi`, `foto`, `id_admin`) VALUES
+(9, 'TEST', 'TEST 1', '<p>TEST</p>', 'berita-9.png', NULL),
+(10, 'TEST 2', 'TEST 2', '<p>ISI</p>', 'berita-10.png', NULL),
+(11, 'TEST 3', 'Deskripsi 3', '<p>TEST</p>', NULL, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_admin`
 --
 
 CREATE TABLE `user_admin` (
   `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_admin`
 --
 
-INSERT INTO `user_admin` (`id`, `username`, `password`, `created_at`) VALUES
-(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', '2021-06-16 20:31:45');
+INSERT INTO `user_admin` (`id`, `name`, `username`, `password`, `created_at`, `updated_at`) VALUES
+(2, 'Admin 1', 'admin', '81dc9bdb52d04dc20036dbd8313ed055', '2021-06-24 19:55:15', '2021-06-24 19:55:15');
 
 -- --------------------------------------------------------
 
@@ -171,6 +197,12 @@ INSERT INTO `warga` (`nik`, `password`, `nama`, `tempat_lahir`, `tanggal_lahir`,
 --
 
 --
+-- Indexes for table `solusi`
+--
+ALTER TABLE `solusi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user_admin`
 --
 ALTER TABLE `user_admin`
@@ -187,10 +219,15 @@ ALTER TABLE `warga`
 --
 
 --
+-- AUTO_INCREMENT for table `solusi`
+--
+ALTER TABLE `solusi`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
 -- AUTO_INCREMENT for table `user_admin`
 --
 ALTER TABLE `user_admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
