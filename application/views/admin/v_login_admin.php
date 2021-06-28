@@ -46,6 +46,10 @@
 								<button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
 							</div>
 						</div>
+						<div class="col-sm-12 col-xs-12 text-center">
+							<span class="text-muted">Login sebagai warga?</span>
+							<a href="<?php echo base_url() ?>" class="f-w-600 p-l-5">Login Warga</a>
+						</div>
 						<!-- <div class="card-footer"> -->
 						<!-- <div class="col-sm-12 col-xs-12 text-center">
 							<span class="text-muted">Login sebagai admin?</span>
