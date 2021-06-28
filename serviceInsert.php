@@ -11,7 +11,8 @@ if(!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO warga (nik, password, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, rt, rw, agama, bekerja) VALUES";
+$sqlWarga = "INSERT INTO warga (nik, password, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, rt, rw, agama, bekerja) VALUES";
+$sqlWargaAdditional = "INSERT INTO warga_additional (nik) VALUES";
 
 $file_handle = fopen("warga.csv", "r");
 
@@ -34,13 +35,20 @@ while (($row = fgetcsv($file_handle, 0, ",")) !== FALSE) {
 			$bekerja = 1;
 		}
 
-		$sql2 = $sql . " ('$nik', '$pass', '$nama', '$tmp_lhr', '$tgl_lhr', '$jk', '$alamat', $rt, $rw, '$agama', $bekerja)";
+		$sqlWarga2 = $sqlWarga . " ('$nik', '$pass', '$nama', '$tmp_lhr', '$tgl_lhr', '$jk', '$alamat', $rt, $rw, '$agama', $bekerja)";
+		$sqlWargaAdditional2 = $sqlWargaAdditional . " ('$nik')";
 
 		// mysqli_query($conn, $sql2);
-		if (mysqli_query($conn, $sql2)) {
+		if (mysqli_query($conn, $sqlWarga2)) {
 			echo "New record created successfully \n";
 		} else {
-			echo "Error: " . $sql . "<br>" . mysqli_error($conn). "\n";
+			echo "Error: " . $sqlWarga2 . "<br>" . mysqli_error($conn). "\n";
+		}
+
+		if (mysqli_query($conn, $sqlWargaAdditional2)) {
+			echo "New record created successfully \n";
+		} else {
+			echo "Error: " . $sqlWargaAdditional2 . "<br>" . mysqli_error($conn). "\n";
 		}
 		// echo 'insert';
 		// echo $tgl_lhr;

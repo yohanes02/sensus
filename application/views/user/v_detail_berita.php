@@ -1,6 +1,6 @@
 <div class="wrapper">
 	<header class="main-header-top hidden-print">
-		<a href="" class="logo"><img src="assets/images/logo-jkt.png" alt="" class="ing-fluid able-logo"  style="width: 40px;"></a>
+		<a href="" class="logo"><img src="assets/images/logo-jkt.png" alt="" class="ing-fluid able-logo" style="width: 40px;"></a>
 		<nav class="navbar navbar-static-top">
 			<a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
 			<div class="navbar-custom-menu f-right">
@@ -16,10 +16,10 @@
 						</a>
 						<ul class="dropdown-menu settings-menu">
 							<!-- <li><a href="#!"><i class="icon-settings"></i> Settings</a></li> -->
-							<li><a href="#"><i class="icon-user"></i> Profile</a></li>
+							<li><a href="<?= site_url('user/profile') ?>"><i class="icon-user"></i> Profile</a></li>
 							<!-- <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li> -->
 							<li class="p-0">
-									<div class="dropdown-divider m-0"></div>
+								<div class="dropdown-divider m-0"></div>
 							</li>
 							<!-- <li><a href="#"><i class="icon-lock"></i> Lock Screen</a></li> -->
 							<li><a href="<?= base_url('user/logout') ?>"><i class="icon-logout"></i> Logout</a></li>
@@ -33,44 +33,30 @@
 		<section class="sidebar" id="sidebar-scroll">
 			<ul class="sidebar-menu">
 				<li class="treeview">
-					<a href="<?= site_url('user') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Berita</span></a>
+					<a href="" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Berita</span></a>
 				</li>
 				<li class="treeview">
-					<a href="<?= site_url('user/profile') ?>" class="waves-effecr waves-dark"><i class="ti-user"></i><span>Profil</span></a>
+					<a href="" class="waves-effecr waves-dark"><i class="ti-user"></i><span>Profil</span></a>
 				</li>
 			</ul>
 		</section>
 	</aside>
 	<div class="content-wrapper">
-		<div class="container-fluid">
+		<div class="container-fluid" style="background: white;">
 			<div class="row">
-				<div class="main-header">
-					<h4><span class="ti-info-alt"></span> Berita</h4>
-				</div>
-			</div>
-			<div class="row">
-<?php foreach ($berita as $key => $value) { ?>
-			<div class="col-lg-4">
-				<div class="card">
-					<img src="<?php if(empty($value['foto'])) {echo base_url("assets/foto/no-image.jpg");}else {echo base_url("assets/foto/".$value['foto']);} ?>" alt="No Image" style="max-height: 200px; height: 200px; width: 100%;">
-					<div class="body-berita">
-						<h5 class="card-title"><?= $value['title'] ?></h5>
-						<p class="card-text"><?= $value['deskripsi'] ?></p>
+				<div class="col-lg-12" style="margin: 20px 0px;">
+					<a href="<?= site_url('user') ?>" style="cursor: pointer;"><label for="" style="cursor: pointer;"><i class="ti-arrow-left"></i> Kembali</label></a>
+					<div class="dataBerita" style="margin-top: 10px;">
+						<h4><?= $detail['title'] ?></h4>
+						<!-- <img src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" class="img-fluid" alt="IMAGE" style="height: 300px; width: 100%;"> -->
+						<img src="<?php if(empty($detail['foto'])){echo base_url("assets/foto/no-image.jpg");}else{echo base_url("assets/foto/".$detail['foto']);} ?>" class="img-fluid" alt="IMAGE" style="height: 300px; width: 100%;">
+						<span>Uploaded: 29 Februari 2021</span>
+						<div id="isi" style="margin-top: 20px;">
+							<?= $detail['isi'] ?>
+						</div>
 					</div>
-					<a href="<?= site_url("user/beritaDetail/". $value['id']) ?>">
-						<button class="btn btn-inverse-primary btn-block">Lihat Detail</button>
-					</a>
 				</div>
-			</div>
-<?php } ?>
 			</div>
 		</div>
 	</div>
 </div>
-
-<script>
-	var body = document.querySelector('body');
-	body.classList.add('fixed');
-	body.classList.add('sidebar-mini');
-	console.log(body);
-</script>

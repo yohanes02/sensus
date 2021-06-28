@@ -15,4 +15,9 @@ class Solusi_m extends CI_Model
 		$this->db->insert('solusi', $input);
     return $this->db->affected_rows();
 	}
+
+	public function getBeritaById($id) {
+		$this->db->where(['id' => $id]);
+		return $this->db->get('solusi');
+	}
 }

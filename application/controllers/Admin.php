@@ -138,6 +138,15 @@ class Admin extends Core_Controller
 
 		redirect('admin/kelola_admin');
 	}
+
+	public function beritaDetail($id) {
+		$data['detail'] = $this->Solusi_m->getBeritaById($id)->row_array();
+
+		$data['page'] = 'berita_detail';
+		$this->load->view('components/header');
+		$this->load->view('admin/v_detail_berita', $data);
+		$this->load->view('components/footer', $data);
+	}
 }
 
 ?>

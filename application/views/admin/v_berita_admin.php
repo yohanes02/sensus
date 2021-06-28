@@ -68,7 +68,7 @@
 							<h5 class="card-title"><?= $value['title'] ?></h5>
 							<p class="card-text"><?= $value['deskripsi'] ?></p>
 						</div>
-						<a href="">
+						<a href="<?= site_url("admin/beritaDetail/". $value['id']) ?>">
 							<button class="btn btn-inverse-primary btn-block">Lihat Detail</button>
 						</a>
 					</div>

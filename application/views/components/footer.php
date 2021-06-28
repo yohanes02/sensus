@@ -25,6 +25,9 @@
    <script src="<?php echo base_url() ?>assets/plugins/waypoints/jquery.waypoints.min.js"></script>
    <script src="<?php echo base_url() ?>assets/plugins/countdown/js/jquery.counterup.js"></script>
 
+	 <!-- Moment js -->
+	 <script src="<?php echo base_url() ?>assets/plugins/moment/min/moment.min.js"></script>
+
    <!-- Echart js -->
    <script src="<?php echo base_url() ?>assets/plugins/charts/echarts/js/echarts-all.js"></script>
 
