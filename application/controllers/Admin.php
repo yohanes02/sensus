@@ -157,8 +157,16 @@ class Admin extends Core_Controller
 
 	public function changePassword() {
 		$input = $this->input->post();
-
+		
 		$id = $input['idAdmin'];
+
+		$oldPass = md5($input['oldPass']);
+		$resultPass = $this->Admin_m->checkPass($id, $oldPass)->row_array();
+		if(empty($resultPass)) {
+			$this->session->set_userdata('incorrectPass', 'Password Beda');
+			redirect('admin/kelola_admin');
+		}
+
 		$data = [
 			"password" => md5($input['newPass'])
 		];

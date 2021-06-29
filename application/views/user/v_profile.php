@@ -69,6 +69,20 @@
 				</ul>
 				<div class="tab-content" style="background-color: white; min-height: 100vh">
 					<div class="tab-pane active" id="dataWarga" role="tabpanel" style="min-height: 100vh">
+					<p>
+						<?php
+
+						if (!empty($this->session->userdata('incorrectPass'))) {
+							$res = $this->session->userdata('incorrectPass');
+							$this->session->unset_userdata("incorrectPass");
+							$msg = '<div class="alert alert-danger" role="alert">
+												Password yang dimasukkan salah, password tidak berhasil diganti.
+											</div>';
+							echo $msg;
+						}
+
+						?>
+					</p>
 						<div class="card-header">
 							<div class="card-header-text">
 								Data Warga
@@ -220,7 +234,7 @@
 									<p style="font-weight: bold; margin-bottom: 20px; margin-top: 20px; text-decoration: underline;">Aksi</p>
 									<div class="row">
 										<div class="col-lg-3">
-											<button class="btn btn-info" type="button" data-toggle="modal" data-target="#gantiPassword">Ubah Password</button>
+											<button class="btn btn-info" type="button" data-toggle="modal" data-target="#gantiPassword" data-backdrop="static" data-keyboard="false">Ubah Password</button>
 										</div>
 									</div>
 								</div>
@@ -329,30 +343,30 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Ubah Password
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeChangeModal">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</h5>
 			</div>
-			<form action="<?= site_url('user/changePassword') ?>" method="post">
+			<form action="<?= site_url('user/changePassword') ?>" method="post" id="formChange">
 				<div class="modal-body">
 					<input type="hidden" name="nikWarga" id="nikWargaPass">
 					<div class="form-group">
 						<label for="" class="form-control-label">Password Lama</label>
-						<input type="password" class="form-control" name="oldPass" id="lastPassword">
+						<input type="password" class="form-control" name="oldPass" id="lastPassword" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Password Baru</label>
-						<input type="password" class="form-control" name="newPass" id="newPassword">
+						<input type="password" class="form-control" name="newPass" id="newPassword" required>
 					</div>
-					<div class="form-group">
+					<div class="form-group" id="reNewPassDiv">
 						<label for="" class="form-control-label">Password Baru Konfirmasi</label>
-						<input type="password" class="form-control" name="confirmPass" id="retypePassword">
+						<input type="password" class="form-control" name="confirmPass" id="retypePassword" required>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close">Tutup</button>
-					<button type="submit" class="btn btn-success">Simpan</button>
+					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close" id="closeChange">Tutup</button>
+					<button type="submit" class="btn btn-success" id="submitChangePass" disabled>Simpan</button>
 				</div>
 			</form>
 		</div>

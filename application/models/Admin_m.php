@@ -70,4 +70,9 @@ class Admin_m extends CI_Model
 		$this->db->insert('user_admin', $input);
     return $this->db->affected_rows();
 	}
+
+	function checkPass($id, $pass) {
+		$this->db->where(['id'=>$id, 'password'=>$pass]);
+		return $this->db->get('user_admin');
+	}
 }

@@ -24,10 +24,24 @@
 				<div class="main-header">
 					<h4><span class="ti-settings"></span> Kelola Admin</h4>
 					<div style="float: right;">
-						<button class="btn btn-primary" data-toggle="modal" data-target="#create" style="margin-right: 20px;"><i class="ti-plus"></i> Tambah</button>
+						<button class="btn btn-primary" data-toggle="modal" data-target="#create" data-backdrop="static" data-keyboard="false" style="margin-right: 20px;"><i class="ti-plus"></i> Tambah</button>
 					</div>
 				</div>
 			</div>
+			<p>
+				<?php
+
+				if (!empty($this->session->userdata('incorrectPass'))) {
+					$res = $this->session->userdata('incorrectPass');
+					$this->session->unset_userdata("incorrectPass");
+					$msg = '<div class="alert alert-danger" role="alert">
+										Password yang dimasukkan salah, password tidak berhasil diganti.
+									</div>';
+					echo $msg;
+				}
+
+				?>
+			</p>
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="card">
@@ -53,7 +67,7 @@
 										<button id="btnGantiPass" type="button" data-toggle="modal" data-target="#gantiPassword" class="btn-success" onclick="getNum(<?=$admin_data[$i]['id']?>)">Ganti Password</button>
 										<button id="btnDelete" type="button" data-toggle="modal" data-target="#delete" class="btn-danger" onclick="getNum(<?=$admin_data[$i]['id']?>)">Delete</button> -->
 										<button id="btnUbahData" type="button" data-toggle="modal" data-target="#ubahAdmin" class="btn btn-primary" onclick="ubahData(<?=$admin_data[$i]['id']?>)">Ubah</button>
-										<button id="btnGantiPass" type="button" data-toggle="modal" data-target="#gantiPassword" class="btn btn-success" onclick="gantiPassword(<?=$admin_data[$i]['id']?>)">Ganti Password</button>
+										<button id="btnGantiPass" type="button" data-toggle="modal" data-target="#gantiPassword" data-backdrop="static" data-keyboard="false" class="btn btn-success" onclick="gantiPassword(<?=$admin_data[$i]['id']?>)">Ganti Password</button>
 										<button id="btnDelete" type="button" data-toggle="modal" data-target="#delete" class="btn btn-danger" onclick="deleteAdmin(<?=$admin_data[$i]['id']?>)">Delete</button>
 									</td>
 								</tr>
@@ -104,7 +118,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="ubahAdminTitle">Ganti Password
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeChangePassModal">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</h5>
@@ -120,14 +134,14 @@
 						<label for="" class="form-control-label">Password Baru</label>
 						<input type="password" class="form-control" name="newPass" id="newPassword" required>
 					</div>
-					<div class="form-group">
+					<div class="form-group" id="reNewPassDiv">
 						<label for="" class="form-control-label">Password Baru Konfirmasi</label>
 						<input type="password" class="form-control" name="confirmPass" id="retypePassword" required>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close" id="closeChangePass">Tutup</button>
-					<button type="submit" class="btn btn-success">Simpan</button>
+					<button type="submit" class="btn btn-success" id="submitChangePass" disabled>Simpan</button>
 				</div>
 			</form>
 		</div>
@@ -164,7 +178,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Buat Admin
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeCreateModal">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</h5>
@@ -183,14 +197,14 @@
 						<label for="" class="form-control-label">Password</label>
 						<input type="password" class="form-control" name="passBaru" id="passwordBaru" required>
 					</div>
-					<div class="form-group">
+					<div class="form-group" id="reNewPassAddDiv">
 						<label for="" class="form-control-label">Password Konfirmasi</label>
 						<input type="password" class="form-control" name="confirmPassBaru" id="retypePasswordBaru" required>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close" id="closeCreate">Tutup</button>
-					<button type="submit" class="btn btn-success">Buat Admin</button>
+					<button type="submit" class="btn btn-success" id="submitCreate" disabled>Buat Admin</button>
 				</div>
 			</form>
 		</div>

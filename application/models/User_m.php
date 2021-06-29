@@ -19,6 +19,11 @@ class User_m extends CI_Model
 		return $this->db->affected_rows();
 	}
 
+	public function changePass($nik, $data) {
+		$this->db->where(['nik' => $nik])->update('warga', $data);
+		return $this->db->affected_rows();
+	}
+
 	public function insertWork($ins) {
 		$this->db->insert('history_work', $ins);
 		return $this->db->affected_rows();
@@ -37,5 +42,9 @@ class User_m extends CI_Model
 	public function deleteWork($id) {
 		$this->db->where(['id'=>$id])->delete("history_work");
 		return $this->db->affected_rows();
+	}
+	public function checkPass($nik, $pass) {
+		$this->db->where(['nik'=>$nik, 'password'=>$pass]);
+		return $this->db->get('warga');
 	}
 }

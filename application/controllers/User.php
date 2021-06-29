@@ -64,11 +64,18 @@ class User extends Core_Controller
 		$nik = $this->session->userdata('nik');
 		$input = $this->input->post();
 
+		$oldPass = md5($input['oldPass']);
+		$resultPass = $this->User_m->checkPass($nik, $oldPass)->row_array();
+		if(empty($resultPass)) {
+			$this->session->set_userdata('incorrectPass', 'Password Beda');
+			redirect('user/profile');
+		}
+
 		$data = [
 			'password' => md5($input['newPass']),
 		];
 
-		$this->User_m->updateUser($nik, $data);
+		$this->User_m->changePass($nik, $data);
 
 		redirect('user/profile');
 	}

@@ -3,6 +3,28 @@ var obj = {
 		this.addListener();
 		// console.log("TEST");
 	},
+	checkIfPassSameModal: function checkIfPassSameModal() {
+		if($('#alert_pass')) {
+      $('#alert_pass').remove();
+    }
+		if($("#newPassword").val() != "" && $("#retypePassword").val() != "" && $("#lastPassword").val() != "") {
+      if($("#newPassword").val() == $("#retypePassword").val()) {
+        console.log("same");
+        $("#submitChangePass").attr("disabled", false);
+				// $('#alert_pass').remove();
+      } else {
+        var span = document.createElement('span');
+        span.id = 'alert_pass';
+        span.textContent = "Tidak sama dengan password baru";
+        span.className = 'text-danger';
+        var div = document.getElementById('reNewPassDiv');
+        div.append(span);
+        $("#submitChangePass").attr("disabled", true);
+      }
+    } else {
+      $("#submitChangePass").attr("disabled", true);
+    }
+	},
 	addListener: function addListener() {
 		var _this = this;
 		$("#stillWork").click(function() {
@@ -49,6 +71,27 @@ var obj = {
 				$("#statusWork").val('1');
 				document.getElementById("endWorking").disabled = true;
 			}
+		});
+		$('#closeChangeModal').on('click', function (e) {
+			$('#formChange')
+				.find("input")
+					.val('')
+					.end()
+		});
+		$('#closeChange').on('click', function (e) {
+			$('#formChange')
+				.find("input")
+					.val('')
+					.end()
+		});
+		$('#lastPassword').on('keyup', function(e) {
+			_this.checkIfPassSameModal();
+		});
+		$('#newPassword').on('keyup', function(e) {
+			_this.checkIfPassSameModal();
+		});
+		$('#retypePassword').on('keyup', function(e) {
+			_this.checkIfPassSameModal();
 		});
 	}
 }
