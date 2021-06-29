@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 28, 2021 at 05:03 PM
+-- Generation Time: Jun 29, 2021 at 05:09 PM
 -- Server version: 5.7.33-0ubuntu0.16.04.1
 -- PHP Version: 5.6.40-50+ubuntu16.04.1+deb.sury.org+1
 
@@ -41,7 +41,9 @@ CREATE TABLE `history_work` (
 --
 
 INSERT INTO `history_work` (`id`, `nik`, `perusahaan`, `bidang`, `start_work`, `end_work`, `status`) VALUES
-(3, '317506100200001', 'Intimap', 'Internship', '2018-05-10', '2019-10-09', 0);
+(5, '317506100200001', 'Intimap', 'Programmer', '2018-03-14', '2019-04-08', 0),
+(7, '317506100200001', 'Epson', 'Staff', '2019-05-16', '2020-05-13', 0),
+(9, '317506100200002', 'Intimap', 'Staff', '2020-06-10', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -52,6 +54,7 @@ INSERT INTO `history_work` (`id`, `nik`, `perusahaan`, `bidang`, `start_work`, `
 CREATE TABLE `solusi` (
   `id` int(10) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `tipe` int(1) NOT NULL,
   `deskripsi` text NOT NULL,
   `isi` text NOT NULL,
   `foto` text,
@@ -63,10 +66,9 @@ CREATE TABLE `solusi` (
 -- Dumping data for table `solusi`
 --
 
-INSERT INTO `solusi` (`id`, `title`, `deskripsi`, `isi`, `foto`, `id_admin`, `updated_at`) VALUES
-(9, 'TEST', 'TEST 1', '<p>TEST</p>', 'berita-9.png', NULL, NULL),
-(10, 'TEST 2', 'TEST 2', '<p>ISI</p>', 'berita-10.png', NULL, NULL),
-(11, 'TEST 3', 'Deskripsi 3', '<p>TEST</p>', NULL, 2, NULL);
+INSERT INTO `solusi` (`id`, `title`, `tipe`, `deskripsi`, `isi`, `foto`, `id_admin`, `updated_at`) VALUES
+(16, 'BLK 1', 0, 'BLK 1', '<p>BLK 1</p>', 'berita-16.png', 2, NULL),
+(17, 'SEMINAR 1', 1, 'SEMINAR 1', '<p>SEMINAR</p>', 'berita-17.jpg', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -238,13 +240,13 @@ CREATE TABLE `warga_additional` (
 
 INSERT INTO `warga_additional` (`nik`, `cur_alamat`, `cur_rt`, `cur_rw`, `email`, `handphone`) VALUES
 ('317506100200001', NULL, NULL, NULL, '', ''),
-('317506100200002', 'bulak', '5', '15', 'nik2@gmail.com', '3'),
+('317506100200002', 'bulak', '5', '15', 'nik2@gmail.com', '4'),
 ('317506100200003', NULL, NULL, NULL, NULL, NULL),
 ('317506100200004', NULL, NULL, NULL, NULL, NULL),
 ('317506100200005', NULL, NULL, NULL, NULL, NULL),
 ('317506100200006', NULL, NULL, NULL, NULL, NULL),
 ('317506100200007', NULL, NULL, NULL, NULL, NULL),
-('317506100200008', NULL, NULL, NULL, NULL, NULL),
+('317506100200008', NULL, NULL, NULL, '', ''),
 ('317506100200009', NULL, NULL, NULL, NULL, NULL),
 ('317506100200010', NULL, NULL, NULL, NULL, NULL),
 ('317506100200011', NULL, NULL, NULL, NULL, NULL),
@@ -380,12 +382,12 @@ ALTER TABLE `warga_additional`
 -- AUTO_INCREMENT for table `history_work`
 --
 ALTER TABLE `history_work`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `solusi`
 --
 ALTER TABLE `solusi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `user_admin`
 --
