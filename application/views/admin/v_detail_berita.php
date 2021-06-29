@@ -54,7 +54,7 @@
 					<a href="<?= site_url('admin/berita') ?>" style="cursor: pointer;"><label for="" style="cursor: pointer;"><i class="ti-arrow-left"></i> Kembali</label></a>
 					<div class="dataBerita" style="margin-top: 10px;">
 						<h4><?= $detail['title'] ?></h4>
-						<img id="banner" src="<?php if(empty($detail['foto'])){echo base_url("assets/foto/no-image.jpg");}else{echo base_url("assets/foto/".$detail['foto']);} ?>"  alt="IMAGE">
+						<img id="banner" src="<?php if(empty($detail['foto'])){echo base_url("assets/foto/no-image.jpg");}else{echo base_url("assets/foto/".$detail['foto']);} ?>"  alt="IMAGE" style="margin-left: auto; margin-right: auto; display: block;">
 						<div id="isi" style="margin-top: 20px;">
 							<?= $detail['isi'] ?>
 						</div>

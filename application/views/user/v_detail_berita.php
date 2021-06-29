@@ -49,7 +49,7 @@
 					<div class="dataBerita" style="margin-top: 10px;">
 						<h4><?= $detail['title'] ?></h4>
 						<!-- <img src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" class="img-fluid" alt="IMAGE" style="height: 300px; width: 100%;"> -->
-						<img id="banner" src="<?php if(empty($detail['foto'])){echo base_url("assets/foto/no-image.jpg");}else{echo base_url("assets/foto/".$detail['foto']);} ?>"  alt="IMAGE">
+						<img id="banner" src="<?php if(empty($detail['foto'])){echo base_url("assets/foto/no-image.jpg");}else{echo base_url("assets/foto/".$detail['foto']);} ?>"  alt="IMAGE" style="margin-left: auto; margin-right: auto; display: block;">
 						<div id="isi" style="margin-top: 20px;">
 							<?= $detail['isi'] ?>
 						</div>
