@@ -106,12 +106,12 @@
 										<input type="text" class="form-control" value="<?php echo $warga['tempat_lahir'] .", ". $warga['tanggal_lahir']?>" disabled>
 									</div>
 								</div>
-								<div class="col-lg-6">
+								<!-- <div class="col-lg-6">
 									<div class="form-group">
 										<label for="" class="form-control-label">Status Perkawinan</label>
 										<input type="text" class="form-control" value="" disabled>
 									</div>
-								</div>
+								</div> -->
 								<div class="col-lg-12" id="alamatDetail">
 									<div class="row">
 										<div class="col-lg-6">
@@ -200,11 +200,26 @@
 										</div>
 									</div>
 								</div>
+								<div class="col-lg-12" id="dataTambahan">
+									<p style="font-weight: bold; margin-bottom: 20px; margin-top: 20px; text-decoration: underline;">Status Bekerja</p>
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="form-group row">
+												<label for="example-search-input" class="col-lg-4 col-form-label form-control-label">Status Bekerja</label>
+												<div class="col-lg-8">
+														<select name="statusBekerja" id="statusBekerja" class="form-control">
+															<option value="1" <?php if($warga['bekerja']=='1') echo 'selected'; ?>>Bekerja</option>
+															<option value="0" <?php if($warga['bekerja']=='0') echo 'selected'; ?>>Tidak Bekerja</option>
+														</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 								<div class="col-lg-12" id="aksi">
 									<p style="font-weight: bold; margin-bottom: 20px; margin-top: 20px; text-decoration: underline;">Aksi</p>
 									<div class="row">
 										<div class="col-lg-3">
-
 											<button class="btn btn-info" type="button" data-toggle="modal" data-target="#gantiPassword">Ubah Password</button>
 										</div>
 									</div>
@@ -218,11 +233,6 @@
 						</div>
 					</div>
 					<div class="tab-pane" id="riwayatPekerjaan" role="tabpanel" style="min-height: 100vh">
-						<div class="card-header">
-							<div class="card-header-text">
-								Riwayat Pekerjaan
-							</div>
-						</div>
 						<div class="card-block">
 							<form action="<?= site_url('user/insertWork') ?>" method="post">							
 								<div id="newWork" class="col-lg-12">
@@ -230,30 +240,30 @@
 										<div class="col-lg-6">
 											<div class="form-group">
 												<label for="" class="form-control-label">Nama Perusahaan</label>
-												<input type="text" class="form-control" name="perusahaan" value="">
+												<input type="text" class="form-control" name="perusahaan" value="" required>
 											</div>
 										</div>
 										<div class="col-lg-6">
 											<div class="form-group">
 												<label for="" class="form-control-label">Bidang Pekerjaan</label>
-												<input type="text" class="form-control" name="bidang" value="">
+												<input type="text" class="form-control" name="bidang" value="" required>
 											</div>
 										</div>
 										<div class="col-lg-6">
 											<div class="form-group">
 												<label for="" class="form-control-label">Mulai Bekerja</label>
 												<!-- <input type="text" class="form-control" name="start-working" value=""> -->
-												<input class="form-control" type="date" value="" name="start-working" id="start-working">
+												<input class="form-control" type="date" value="" name="start-working" id="start-working" required>
 											</div>
 										</div>
 										<div class="col-lg-6">
 											<div class="form-group">
 												<label for="" class="form-control-label">Selesai Bekerja</label>
 												<!-- <input type="text" class="form-control" name="end-working" value=""> -->
-												<input class="form-control" type="date" value="" name="end-working" id="end-working">
+												<input class="form-control" type="date" value="" name="end-working" id="end-working" required>
 											</div>
 											<div class="form-check" id="checkboxBekerja">
-													<input id="status-work" type="hidden" name="status" value="0">
+													<input id="status-work" type="hidden" name="status-work" value="0">
 													<label for="stillWork" class="form-check-label">
 													<input id="stillWork" class="form-check-input" type="checkbox">
 													Masih Bekerja
@@ -263,10 +273,20 @@
 									</div>
 								</div>
 								<div class="col-lg-12">
-									<button id="addWork" type="submit" class="btn btn-primary"><i class="ti-plus"></i> Tambah Pekerjaan</button>
+									<button id="addWork" type="submit" class="btn btn-primary">Tambah Riwayat Pekerjaan</button>
 								</div>
 							</form>
-							<br>
+						</div>
+						<!-- <div class="card-header">
+							<div class="card-header-text">
+								Riwayat Pekerjaan
+							</div>
+						</div> -->
+						<div class="card-block">
+							<!-- <br> -->
+							<div class="card-header-text">
+								Riwayat Pekerjaan
+							</div>
 							<div id="listPekerjaan" class="col-lg-12" style="margin-top: 20px;">
 								<table class="table table-hover">
 									<thead>
@@ -349,24 +369,31 @@
 					</button>
 				</h5>
 			</div>
-			<form action="" method="post">
+			<form action="<?= site_url('user/updateWork') ?>" method="post">
 				<div class="modal-body">
 					<input type="hidden" name="idPekerjaan" id="idPekerjaan">
 					<div class="form-group">
 						<label for="" class="form-control-label">Nama Perusahaan</label>
-						<input type="text" class="form-control" name="namaPerusahaan" id="namaPerusahaan">
+						<input type="text" class="form-control" name="namaPerusahaan" id="namaPerusahaan" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Bidang Pekerjaan</label>
-						<input type="text" class="form-control" name="bidang" id="bidang">
+						<input type="text" class="form-control" name="namaBidang" id="bidang" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Mulai Bekerja</label>
-						<input type="date" class="form-control" name="startWorking" id="startWorking">
+						<input type="date" class="form-control" name="startWorking" id="startWorking" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Selesai Bekerja</label>
 						<input type="date" class="form-control" name="endWorking" id="endWorking">
+					</div>
+					<div class="form-check" id="checkboxBekerjaModal">
+							<input id="statusWork" type="hidden" name="statusWork" value="0">
+							<label for="stillWorkModal" class="form-check-label">
+							<input id="stillWorkModal" class="form-check-input" type="checkbox">
+							Masih Bekerja
+						</label>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -382,7 +409,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="ubahAdminTitle">Delete Admin
+				<h5 class="modal-title" id="ubahAdminTitle">Delete Riwayat
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>

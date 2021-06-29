@@ -10,7 +10,7 @@
 					<a href="<?= base_url('admin/berita') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Berita</span></a>
 				</li>
 				<li class="treeview">
-					<a href=""<?= base_url('admin/laporan') ?>"" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
+					<a href="<?= base_url('admin/laporan') ?>" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
 				</li>
 				<li class="treeview">
 					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings"></i><span>Kelola Admin</span></a>

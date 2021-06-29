@@ -18,13 +18,23 @@
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label form-control-label" for="">Judul</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="text" name="title" id="title">
+									<input class="form-control" type="text" name="title" id="title" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-2 col-form-label form-control-label" for="">Tipe</label>
+								<div class="col-sm-10">
+									<select name="tipe" id="tipe" class="form-control">
+										<option value="0">Balai Latihan Kerja</option>
+										<option value="1">Seminar</option>
+									</select>
+									<!-- <input class="form-control" type="text" name="tipe" id="tipe" required> -->
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-sm-2 col-form-label form-control-label" for="">Deskripsi Singkat</label>
 								<div class="col-sm-10">
-									<input class="form-control" type="text" name="deskripsi" id="deskripsi">
+									<input class="form-control" type="text" name="deskripsi" id="deskripsi" required>
 								</div>
 							</div>
 							<div class="form-group row">

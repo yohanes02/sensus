@@ -13,7 +13,14 @@ class User extends Core_Controller
 
 	public function index()
 	{
-		$berita = $this->Solusi_m->getBerita()->result_array();
+		$hisWork = $this->User_m->getWork($this->session->userdata('nik'))->result_array();
+		// print_r($hisWork);
+		// die();	
+		if(empty($hisWork)) {
+			$berita = $this->Solusi_m->getBerita('0')->result_array();
+		} else {
+			$berita = $this->Solusi_m->getBerita('1')->result_array();
+		}
 		$data['page'] = 'dashboard_user';
 		$data['berita'] = $berita;
 		$this->load->view('components/header');
@@ -47,7 +54,7 @@ class User extends Core_Controller
 	public function beritaDetail($id) {
 		$data['detail'] = $this->Solusi_m->getBeritaById($id)->row_array();
 
-		$data['page'] = 'berita_detail';
+		$data['page'] = 'berita_detail_user';
 		$this->load->view('components/header');
 		$this->load->view('user/v_detail_berita', $data);
 		$this->load->view('components/footer', $data);
@@ -72,6 +79,7 @@ class User extends Core_Controller
 		// var_dump($input['sameAddress']);
 
 		$status = ['stats_alamat'=>0];
+		$status['bekerja'] = $input['statusBekerja'];
 
 		$data = [
 			'email' => $input['email'],
@@ -85,7 +93,8 @@ class User extends Core_Controller
 			$data['cur_rw'] = $input['cur_rw'];
 		}
 
-		// print_r($data);
+		// print_r($status);
+		// die();
 
 		$this->User_m->updateUser($nik, $data, $status);
 
@@ -101,16 +110,39 @@ class User extends Core_Controller
 			"perusahaan"		=> $post['perusahaan'],
 			"bidang"				=> $post['bidang'],
 			"start_work"		=> date('Y-m-d', strtotime($post['start-working'])),
-			"status"				=> $post['status']
+			"status"				=> $post['status-work']
 		];
 
-		if($post['status'] == '1') {
+		if($post['status-work'] == '1') {
 			$data['end_work'] = null;
 		} else {
 			$data['end_work'] = date('Y-m-d', strtotime($post['end-working']));
 		}
 		
 		$this->User_m->insertWork($data);
+
+		redirect('user/profile');
+	}
+
+	public function updateWork() {
+		$post = $this->input->post();
+		
+		$id = $post['idPekerjaan'];
+
+		$data = [
+			"perusahaan"		=> $post['namaPerusahaan'],
+			"bidang"				=> $post['namaBidang'],
+			"start_work"		=> date('Y-m-d', strtotime($post['startWorking'])),
+			"status"				=> $post['statusWork']
+		];
+
+		if($post['statusWork'] == '1') {
+			$data['end_work'] = null;
+		} else {
+			$data['end_work'] = date('Y-m-d', strtotime($post['endWorking']));
+		}
+
+		$this->User_m->updateWork($id, $data);
 
 		redirect('user/profile');
 	}

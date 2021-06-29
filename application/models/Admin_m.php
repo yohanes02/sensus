@@ -30,6 +30,21 @@ class Admin_m extends CI_Model
     $execQuery = $this->db->query($rawQuery);
 		return $execQuery;
 	}
+	
+	function getEmployedPerRw() {
+		$rawQuery = "SELECT rw, COUNT(rw) as total FROM warga WHERE bekerja = 1 GROUP BY rw";
+    $execQuery = $this->db->query($rawQuery);
+		return $execQuery;
+	}
+
+	function getSummaryNow() {
+		$rawQuery = "SELECT a.rw, work, nonwork FROM 
+		(select rw, count(rw) as work from warga where bekerja = 1 GROUP BY rw) as a,
+		(select rw, count(rw) as nonwork from warga where bekerja = 0 GROUP BY rw) as b
+		where a.rw = b.rw";
+		$execQuery = $this->db->query($rawQuery);
+		return $execQuery;
+	}
 
 	function getAllAdmin() {
 		return $this->db->get('user_admin');

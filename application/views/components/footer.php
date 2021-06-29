@@ -34,6 +34,7 @@
    <script src="https://code.highcharts.com/highcharts.js"></script>
    <script src="https://code.highcharts.com/modules/exporting.js"></script>
    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
 
    <!-- custom js -->
    <script type="text/javascript" src="<?php echo base_url() ?>assets/js/main.min.js"></script>

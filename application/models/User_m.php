@@ -29,6 +29,11 @@ class User_m extends CI_Model
 		return $this->db->get('history_work');
 	}
 
+	public function updateWork($id, $data) {
+		$this->db->where(['id'=>$id])->update('history_work', $data);
+		return $this->db->affected_rows();
+	}
+
 	public function deleteWork($id) {
 		$this->db->where(['id'=>$id])->delete("history_work");
 		return $this->db->affected_rows();

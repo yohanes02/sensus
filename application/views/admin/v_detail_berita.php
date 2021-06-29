@@ -39,7 +39,7 @@
 					<a href="<?= base_url('admin/berita') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Berita</span></a>
 				</li>
 				<li class="treeview">
-					<a href=""<?= base_url('admin/laporan') ?>"" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
+					<a href="<?= base_url('admin/laporan') ?>" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
 				</li>
 				<li class="treeview">
 					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings"></i><span>Kelola Admin</span></a>
@@ -54,8 +54,7 @@
 					<a href="<?= site_url('admin/berita') ?>" style="cursor: pointer;"><label for="" style="cursor: pointer;"><i class="ti-arrow-left"></i> Kembali</label></a>
 					<div class="dataBerita" style="margin-top: 10px;">
 						<h4><?= $detail['title'] ?></h4>
-						<img src="<?php if(empty($detail['foto'])){echo base_url("assets/foto/no-image.jpg");}else{echo base_url("assets/foto/".$detail['foto']);} ?>" class="img-fluid" alt="IMAGE" style="height: 300px; width: 100%;">
-						<span>Uploaded: 29 Februari 2021</span>
+						<img id="banner" src="<?php if(empty($detail['foto'])){echo base_url("assets/foto/no-image.jpg");}else{echo base_url("assets/foto/".$detail['foto']);} ?>"  alt="IMAGE">
 						<div id="isi" style="margin-top: 20px;">
 							<?= $detail['isi'] ?>
 						</div>

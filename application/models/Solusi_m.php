@@ -7,8 +7,13 @@ class Solusi_m extends CI_Model
     parent::__construct();
   }
 
-	function getBerita() {
+	function getBerita($tipe=null) {
+		if($tipe != null) {
+			$this->db->where(['tipe'=>$tipe]);
+		}
+		
 		return $this->db->get('solusi');
+		// return $this->db->get('solusi');
 	}
 
 	function insertBerita($input) {

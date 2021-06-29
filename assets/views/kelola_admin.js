@@ -17,6 +17,18 @@ var obj = {
 		$("#span-file").click(function() {
 			$("#photo").click();
 		});
+		$('#closeCreate').on('click', function (e) {
+			$('#formCreate')
+				.find("input[type=text]")
+					.val('')
+					.end()
+		});
+		$('#closeChangePass').on('click', function (e) {
+			$('#formChangePass')
+				.find("input[type=password]")
+					.val('')
+					.end()
+		})
 	},
 	fillUbahDataModal: function fillUbahDataModal() {
 		var _this = this;

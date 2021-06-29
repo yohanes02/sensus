@@ -10,7 +10,7 @@
 					<a href="<?= base_url('admin/berita') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Berita</span></a>
 				</li>
 				<li class="treeview">
-					<a href=""<?= base_url('admin/laporan') ?>"" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
+					<a href="<?= base_url('admin/laporan') ?>" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
 				</li>
 				<li class="treeview">
 					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings"></i><span>Kelola Admin</span></a>
@@ -82,11 +82,11 @@
 					<input type="hidden" name="idAdmin" id="idAdmin">
 					<div class="form-group">
 						<label for="" class="form-control-label">Nama</label>
-						<input type="text" class="form-control" name="namaAdmin" id="namaAdmin">
+						<input type="text" class="form-control" name="namaAdmin" id="namaAdmin" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Username</label>
-						<input type="text" class="form-control" name="usernameAdmin" id="usernameAdmin">
+						<input type="text" class="form-control" name="usernameAdmin" id="usernameAdmin" required>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -109,24 +109,24 @@
 					</button>
 				</h5>
 			</div>
-			<form action="<?= site_url('admin/changePassword')?>" method="post">
+			<form action="<?= site_url('admin/changePassword')?>" method="post" id="formChangePass">
 				<div class="modal-body">
 					<input type="hidden" name="idAdmin" id="idAdminPass">
 					<div class="form-group">
 						<label for="" class="form-control-label">Password Lama</label>
-						<input type="password" class="form-control" name="oldPass" id="lastPassword">
+						<input type="password" class="form-control" name="oldPass" id="lastPassword" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Password Baru</label>
-						<input type="password" class="form-control" name="newPass" id="newPassword">
+						<input type="password" class="form-control" name="newPass" id="newPassword" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Password Baru Konfirmasi</label>
-						<input type="password" class="form-control" name="confirmPass" id="retypePassword">
+						<input type="password" class="form-control" name="confirmPass" id="retypePassword" required>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close">Tutup</button>
+					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close" id="closeChangePass">Tutup</button>
 					<button type="submit" class="btn btn-success">Simpan</button>
 				</div>
 			</form>
@@ -169,27 +169,27 @@
 					</button>
 				</h5>
 			</div>
-			<form action="<?= site_url('admin/createAdmin') ?>" method="post">	
+			<form action="<?= site_url('admin/createAdmin') ?>" method="post" id="formCreate">	
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="" class="form-control-label">Nama</label>
-						<input type="text" class="form-control" name="namaBaru" id="namaBaru">
+						<input type="text" class="form-control" name="namaBaru" id="namaBaru" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Username</label>
-						<input type="text" class="form-control" name="unameBaru" id="usernameBaru">
+						<input type="text" class="form-control" name="unameBaru" id="usernameBaru" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Password</label>
-						<input type="password" class="form-control" name="passBaru" id="passwordBaru">
+						<input type="password" class="form-control" name="passBaru" id="passwordBaru" required>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Password Konfirmasi</label>
-						<input type="password" class="form-control" name="confirmPassBaru" id="retypePasswordBaru">
+						<input type="password" class="form-control" name="confirmPassBaru" id="retypePasswordBaru" required>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close">Tutup</button>
+					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close" id="closeCreate">Tutup</button>
 					<button type="submit" class="btn btn-success">Buat Admin</button>
 				</div>
 			</form>
