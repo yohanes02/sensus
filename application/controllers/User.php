@@ -14,10 +14,14 @@ class User extends Core_Controller
 	public function index()
 	{
 		$hisWork = $this->User_m->getWork($this->session->userdata('nik'))->result_array();
-		// print_r($hisWork);
+		$dataWarga = $this->User_m->getBekerja($this->session->userdata('nik'))->row_array();
+		// print_r($dataWarga);
 		// die();	
 		if(empty($hisWork)) {
 			$berita = $this->Solusi_m->getBerita('0')->result_array();
+			if($dataWarga['bekerja']=='1') {
+				$berita = $this->Solusi_m->getBerita('1')->result_array();
+			}
 		} else {
 			$berita = $this->Solusi_m->getBerita('1')->result_array();
 		}
@@ -94,7 +98,7 @@ class User extends Core_Controller
 		];
 
 		if($input['sameAddress'] == 'not same') {
-			$status = ['stats_alamat'=>1];
+			$status['stats_alamat'] = 1;
 			$data['cur_alamat'] = $input['cur_alamat'];
 			$data['cur_rt'] = $input['cur_rt'];
 			$data['cur_rw'] = $input['cur_rw'];

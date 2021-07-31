@@ -12,7 +12,9 @@ class AuthAdmin extends CI_Controller
 	{
 		if ($this->session->userdata('tipe_user') == 'admin') {
       redirect('admin');
-    } elseif ($this->session->userdata('tipe_user') == 'warga') {
+    } elseif($this->session->userdata('tipe_user') == 'sekre') {
+      redirect('sekre');
+		}elseif ($this->session->userdata('tipe_user') == 'warga') {
       redirect('user');
     } else {
 			$this->load->view('components/header');
@@ -23,7 +25,6 @@ class AuthAdmin extends CI_Controller
 
 	public function login()
 	{
-		echo "TRY";
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
@@ -35,12 +36,20 @@ class AuthAdmin extends CI_Controller
 
 		$data_session = array(
 			'id' => $admin['id'],
-			'nama' => $admin['username'],
-			'tipe_user' => 'admin'
+			'nama' => $admin['username']
 		);
 
-		$this->session->set_userdata($data_session);
-		redirect('admin');
+		
+		if($admin['type'] == 1) {
+			$data_session['tipe_user'] = 'admin';
+			$this->session->set_userdata($data_session);
+			redirect('admin');
+		} else {
+			$data_session['tipe_user'] = 'sekre';
+			$data_session['sekre_rw'] = $admin['rw'];
+			$this->session->set_userdata($data_session);
+			redirect('sekre');
+		}
 	}
 }
 

@@ -13,6 +13,8 @@ class AuthUser extends CI_Controller
 	{
 		if ($this->session->userdata('tipe_user') == 'admin') {
       redirect('admin');
+    } elseif ($this->session->userdata('tipe_user') == 'sekre') {
+      redirect('sekre');
     } elseif ($this->session->userdata('tipe_user') == 'warga') {
       redirect('user');
     } else {

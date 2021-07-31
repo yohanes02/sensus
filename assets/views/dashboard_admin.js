@@ -15,6 +15,7 @@ var obj = {
 			dataType: 'JSON',
 			success: function(data) {
 				var dataPercentage = [];
+				console.log('data', data);
 
 				data.forEach(d => {
 					var dataa;

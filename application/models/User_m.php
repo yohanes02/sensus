@@ -7,6 +7,12 @@ class User_m extends CI_Model
     parent::__construct();
   }
 
+	public function getBekerja($nik) {
+		$rawQuery = "SELECT bekerja FROM warga WHERE nik = '$nik'";
+		$execQuery = $this->db->query($rawQuery);
+		return $execQuery;
+	}
+
 	public function getDetailWarga($nik) {
 		$rawQuery = "SELECT a.*, b.* FROM warga a, warga_additional b WHERE a.nik = '$nik' AND a.nik = b.nik";
 		$execQuery = $this->db->query($rawQuery);

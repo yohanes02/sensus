@@ -1,6 +1,6 @@
 <div class="wrapper">
 	<header class="main-header-top hidden-print">
-		<a href="" class="logo"><img src="assets/images/logo-jkt.png" alt="" class="ing-fluid able-logo" style="width: 40px;"></a>
+		<a href="" class="logo"><img src="<?=base_url()?>assets/images/logo-jkt.png" alt="" class="ing-fluid able-logo" style="width: 40px;"></a>
 		<nav class="navbar navbar-static-top">
 			<a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
 			<div class="navbar-custom-menu f-right">
@@ -8,7 +8,7 @@
 					<li class="dropdown">
 						<a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
 							<!-- <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span> -->
-							<span><?= $this->session->userdata['nama'] ?></span>
+							<span><b><?= $this->session->userdata['nama'] ?></b></span>
 							<!-- <span><?= $user['username'] ?></b> <i class=" icofont icofont-simple-down"></i></span> -->
 						</a>
 						<a href="<?= site_url('user/logout') ?>" role="button">
@@ -33,10 +33,10 @@
 		<section class="sidebar" id="sidebar-scroll">
 			<ul class="sidebar-menu">
 				<li class="treeview">
-					<a href="<?= site_url('user') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Berita</span></a>
+					<a href="<?= site_url('user') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt txt-primary"></i><span>Berita</span></a>
 				</li>
-				<li class="treeview">
-					<a href="<?= site_url('user/profile') ?>" class="waves-effecr waves-dark"><i class="ti-user"></i><span>Profil</span></a>
+				<li class="active treeview">
+					<a href="<?= site_url('user/profile') ?>" class="waves-effecr waves-dark"><i class="ti-user txt-success"></i><span>Profil</span></a>
 				</li>
 			</ul>
 		</section>
@@ -320,7 +320,7 @@
 											<td id="perusahaan-<?=$value['id']?>"><?=$value['perusahaan']?></td>
 											<td id="bidang-<?=$value['id']?>"><?=$value['bidang']?></td>
 											<td id="start-<?=$value['id']?>"><?php echo date('d M Y', strtotime($value['start_work']))?></td>
-											<td id="end-<?=$value['id']?>"><?php if(!empty($value['end_work'])) {echo date('d M Y', strtotime($value['end_work']));} else {echo "Sekarang";}?></td>
+											<td id="end-<?=$value['id']?>"><?php if(!empty($value['end_work'])) {echo date('d M Y', strtotime($value['end_work']));} else {echo "Masih Bekerja";}?></td>
 											<td>
 												<button class="btn btn-primary" data-toggle="modal" data-target="#editPekerjaan" onclick="editWork(<?= $value['id'] ?>)">Edit</button>
 												<button class="btn btn-danger" data-toggle="modal" data-target="#delete" onclick="deleteWork(<?= $value['id'] ?>)">Hapus</button>

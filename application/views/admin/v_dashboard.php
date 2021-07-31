@@ -3,17 +3,26 @@
 	<aside class="main-sidebar hidden-print">
 		<section class="sidebar" id="sidebar-scroll">
 			<ul class="sidebar-menu">
-				<li class="treeview">
-					<a href="<?= base_url('admin') ?>" class="waves-effecr waves-dark"><i class="ti-desktop"></i><span>Dashboard</span></a>
+				<li class="active treeview">
+					<a href="<?= base_url('admin') ?>" class="waves-effecr waves-dark"><i class="ti-desktop txt-primary"></i><span>Dashboard</span></a>
 				</li>
 				<li class="treeview">
-					<a href="<?= base_url('admin/berita') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt"></i><span>Berita</span></a>
+					<a href="<?= base_url('admin/berita') ?>" class="waves-effecr waves-dark"><i class="ti-info-alt txt-success"></i><span>Berita</span></a>
 				</li>
 				<li class="treeview">
-					<a href="<?= base_url('admin/laporan') ?>" class="waves-effecr waves-dark"><i class="ti-server"></i><span>Laporan</span></a>
+					<a href="<?= base_url('admin/laporan') ?>" class="waves-effecr waves-dark"><i class="ti-bar-chart txt-info"></i><span>Laporan</span></a>
 				</li>
 				<li class="treeview">
-					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings"></i><span>Kelola Admin</span></a>
+					<a href="<?= base_url('admin/input_warga') ?>" class="waves-effecr waves-dark"><i class="ti-plus txt-warning"></i><span>Input Warga</span></a>
+				</li>
+				<li class="treeview">
+					<a href="<?= base_url('admin/data_warga') ?>" class="waves-effecr waves-dark"><i class="ti-server txt-primary"></i><span>Data Warga</span></a>
+				</li>
+				<li class="treeview">
+					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-success"></i><span>Kelola Admin</span></a>
+				</li>
+				<li class="treeview">
+					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekretaris</span></a>
 				</li>
 			</ul>
 		</section>
@@ -28,31 +37,31 @@
 			<div class="row dashboard-header">
 				<div class="col-lg-4 col-md-6">
 					<div class="card dashboard-product">
-						<h6>Warga >= 17 Tahun</h6>
-						<h2 class="dashboard-total-products" id="total-data"></h2>
-						<span>Data yang sudah diinput masuk</span>
-						<div class="side-box">
-							<i class="ti-user text-warning-color"></i>
+						<h5 class="txt-disable">Warga >= 17 Tahun</h5 class="txt-disable">
+						<h2 class="dashboard-total-products text-dark" id="total-data"></h2>
+						<span class="text-dark">Data yang sudah diinput masuk</span>
+						<div class="side-box btn btn-primary">
+							<i class="ti-user txt-white"></i>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="card dashboard-product">
-						<h6>Pekerja</h6>
-						<h2 class="dashboard-total-products" id="total-pekerja"></h2>
-						<span>_</span>
-						<div class="side-box">
-							<i class="ti-user text-warning-color"></i>
+						<h5 class="txt-disable">Pekerja</h5 class="txt-disable">
+						<h2 class="dashboard-total-products text-dark" id="total-pekerja"></h2>
+						<span class="text-dark">_</span>
+						<div class="side-box btn btn-success">
+							<i class="ti-user txt-white"></i>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="card dashboard-product">
-						<h6>Pengganguran</h6>
-						<h2 class="dashboard-total-products" id="total-pengangguran"></h2>
-						<span>_</span>
-						<div class="side-box">
-							<i class="ti-user text-warning-color"></i>
+						<h5 class="txt-disable">Pengganguran</h5 class="txt-disable">
+						<h2 class="dashboard-total-products text-dark" id="total-pengangguran"></h2>
+						<span class="text-dark">_</span>
+						<div class="side-box btn btn-danger">
+							<i class="ti-user txt-white"></i>
 						</div>
 					</div>
 				</div>

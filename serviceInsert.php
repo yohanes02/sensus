@@ -11,10 +11,10 @@ if(!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$sqlWarga = "INSERT INTO warga (nik, password, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, rt, rw, agama, bekerja) VALUES";
+$sqlWarga = "INSERT INTO warga (nik, password, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, alamat, stats_alamat, rt, rw, agama, bekerja) VALUES";
 $sqlWargaAdditional = "INSERT INTO warga_additional (nik) VALUES";
 
-$file_handle = fopen("warga.csv", "r");
+$file_handle = fopen("wargadata.csv", "r");
 
 $i = 0;
 while (($row = fgetcsv($file_handle, 0, ",")) !== FALSE) {
@@ -26,6 +26,7 @@ while (($row = fgetcsv($file_handle, 0, ",")) !== FALSE) {
 		$tgl_lhr	= date('Y-m-d', strtotime($row[3]));
 		$jk				= $row[4];
 		$alamat		= $row[5];
+		$stats_alamat = 0;
 		$rt				= $row[6];
 		$rw				= $row[7];
 		$agama		= $row[8];
@@ -35,7 +36,7 @@ while (($row = fgetcsv($file_handle, 0, ",")) !== FALSE) {
 			$bekerja = 1;
 		}
 
-		$sqlWarga2 = $sqlWarga . " ('$nik', '$pass', '$nama', '$tmp_lhr', '$tgl_lhr', '$jk', '$alamat', $rt, $rw, '$agama', $bekerja)";
+		$sqlWarga2 = $sqlWarga . " ('$nik', '$pass', '$nama', '$tmp_lhr', '$tgl_lhr', '$jk', '$alamat', $stats_alamat, $rt, $rw, '$agama', $bekerja)";
 		$sqlWargaAdditional2 = $sqlWargaAdditional . " ('$nik')";
 
 		// mysqli_query($conn, $sql2);

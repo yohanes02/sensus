@@ -103,7 +103,7 @@ function editWork(id) {
 	$("#idPekerjaan").val(id);
 	var dateStart = moment($("#start-"+id).text()).format('YYYY-MM-DD');
 	var dateEnd;
-	if($("#end-"+id).text() == 'Sekarang') {
+	if($("#end-"+id).text() == 'Masih Bekerja') {
 		console.log("NOW");
 		dateEnd = null;
 		document.getElementById("endWorking").disabled = true;

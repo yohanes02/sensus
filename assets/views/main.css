@@ -15,3 +15,32 @@
 .md-tabs .nav-item, .nav-tabs .slide {
 	width: calc(100% / 2) !important; 
 }
+
+.main-header-top {
+	background-color: #ffffff !important;
+}
+
+.main-header-top > .navbar {
+	background-color: #5e72e4 !important;
+}
+
+.content-wrapper {
+	background-color: #dedede !important;
+}
+
+.card {
+	/* border: #000000 solid; */
+}
+
+.side-box {
+	border-radius: 0 0 0 0 !important;
+}
+
+.side-box i {
+	top: 0;
+	left: 0;
+}
+
+body {
+	background-color: #dedede !important;
+}

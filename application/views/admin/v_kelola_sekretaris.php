@@ -3,7 +3,7 @@
 	<aside class="main-sidebar hidden-print">
 		<section class="sidebar" id="sidebar-scroll">
 			<ul class="sidebar-menu">
-				<li class="treeview">
+			<li class="treeview">
 					<a href="<?= base_url('admin') ?>" class="waves-effecr waves-dark"><i class="ti-desktop txt-primary"></i><span>Dashboard</span></a>
 				</li>
 				<li class="treeview">
@@ -18,10 +18,10 @@
 				<li class="treeview">
 					<a href="<?= base_url('admin/data_warga') ?>" class="waves-effecr waves-dark"><i class="ti-server txt-primary"></i><span>Data Warga</span></a>
 				</li>
-				<li class="active treeview">
+				<li class="treeview">
 					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-success"></i><span>Kelola Admin</span></a>
 				</li>
-				<li class="treeview">
+				<li class="active treeview">
 					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekretaris</span></a>
 				</li>
 			</ul>
@@ -31,7 +31,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="main-header">
-					<h4><span class="ti-settings"></span> Kelola Admin</h4>
+					<h4><span class="ti-settings"></span> Kelola Sekretaris</h4>
 					<div style="float: right;">
 						<button class="btn btn-primary" data-toggle="modal" data-target="#create" data-backdrop="static" data-keyboard="false" style="margin-right: 20px;"><i class="ti-plus"></i> Tambah</button>
 					</div>
@@ -61,28 +61,28 @@
 									<th>Name</th>
 									<th>Username</th>
 									<th>Password</th>
+									<th>RW</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								<?php $no = 1;
-								for ($i = 0; $i < count($admin_data); $i++) { ?>
-									<tr>
-										<td><?= $no ?></td>
-										<td id="name-<?= $admin_data[$i]['id'] ?>"><?= $admin_data[$i]['name'] ?></td>
-										<td id="uname-<?= $admin_data[$i]['id'] ?>"><?= $admin_data[$i]['username'] ?></td>
-										<td><?= $admin_data[$i]['password'] ?></td>
-										<td>
-											<!-- <button id="btnUbahData" type="button" data-toggle="modal" data-target="#ubahAdmin" class="btn-primary" onclick="getNum(<?= $admin_data[$i]['id'] ?>)">Ubah</button>
-										<button id="btnGantiPass" type="button" data-toggle="modal" data-target="#gantiPassword" class="btn-success" onclick="getNum(<?= $admin_data[$i]['id'] ?>)">Ganti Password</button>
-										<button id="btnDelete" type="button" data-toggle="modal" data-target="#delete" class="btn-danger" onclick="getNum(<?= $admin_data[$i]['id'] ?>)">Delete</button> -->
-											<button id="btnUbahData" type="button" data-toggle="modal" data-target="#ubahAdmin" class="btn btn-primary" onclick="ubahData(<?= $admin_data[$i]['id'] ?>)">Ubah</button>
-											<button id="btnGantiPass" type="button" data-toggle="modal" data-target="#gantiPassword" data-backdrop="static" data-keyboard="false" class="btn btn-success" onclick="gantiPassword(<?= $admin_data[$i]['id'] ?>)">Ganti Password</button>
-											<button id="btnDelete" type="button" data-toggle="modal" data-target="#delete" class="btn btn-danger" onclick="deleteAdmin(<?= $admin_data[$i]['id'] ?>)">Delete</button>
-										</td>
-									</tr>
-								<?php $no++;
-								} ?>
+<?php $no = 1; for ($i=0; $i < count($sekre_data); $i++) {?>
+								<tr>
+									<td><?= $no ?></td>
+									<td id="name-<?=$sekre_data[$i]['id']?>"><?= $sekre_data[$i]['name'] ?></td>
+									<td id="uname-<?=$sekre_data[$i]['id']?>"><?= $sekre_data[$i]['username'] ?></td>
+									<td><?= $sekre_data[$i]['password'] ?></td>
+									<td id="sekre-<?= $sekre_data[$i]['id'] ?>"><?= $sekre_data[$i]['rw'] ?></td>
+									<td>
+										<!-- <button id="btnUbahData" type="button" data-toggle="modal" data-target="#ubahAdmin" class="btn-primary" onclick="getNum(<?=$sekre_data[$i]['id']?>)">Ubah</button>
+										<button id="btnGantiPass" type="button" data-toggle="modal" data-target="#gantiPassword" class="btn-success" onclick="getNum(<?=$sekre_data[$i]['id']?>)">Ganti Password</button>
+										<button id="btnDelete" type="button" data-toggle="modal" data-target="#delete" class="btn-danger" onclick="getNum(<?=$sekre_data[$i]['id']?>)">Delete</button> -->
+										<button id="btnUbahData" type="button" data-toggle="modal" data-target="#ubahAdmin" class="btn btn-primary" onclick="ubahData(<?=$sekre_data[$i]['id']?>)">Ubah</button>
+										<button id="btnGantiPass" type="button" data-toggle="modal" data-target="#gantiPassword" data-backdrop="static" data-keyboard="false" class="btn btn-success" onclick="gantiPassword(<?=$sekre_data[$i]['id']?>)">Ganti Password</button>
+										<button id="btnDelete" type="button" data-toggle="modal" data-target="#delete" class="btn btn-danger" onclick="deleteAdmin(<?=$sekre_data[$i]['id']?>)">Delete</button>
+									</td>
+								</tr>
+<?php $no++; } ?>
 							</tbody>
 						</table>
 					</div>
@@ -96,13 +96,13 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="ubahAdminTitle">Ubah Admin
+				<h5 class="modal-title" id="ubahAdminTitle">Ubah Sekretaris
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</h5>
 			</div>
-			<form action="<?= site_url('admin/updateProfil') ?>" method="post">
+			<form action="<?= site_url('admin/updateProfilSekre') ?>" method="post">
 				<div class="modal-body">
 					<input type="hidden" name="idAdmin" id="idAdmin">
 					<div class="form-group">
@@ -112,6 +112,21 @@
 					<div class="form-group">
 						<label for="" class="form-control-label">Username</label>
 						<input type="text" class="form-control" name="usernameAdmin" id="usernameAdmin" required>
+					</div>
+					<div class="form-group">
+						<label for="" class="form-control-label">RW</label>
+						<select name="rw" id="rw" class="form-control">
+							<option value="1">RW 1</option>
+							<option value="2">RW 2</option>
+							<option value="3">RW 3</option>
+							<option value="4">RW 4</option>
+							<option value="5">RW 5</option>
+							<option value="6">RW 6</option>
+							<option value="7">RW 7</option>
+							<option value="8">RW 8</option>
+							<option value="9">RW 9</option>
+							<option value="10">RW 10</option>
+						</select>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -134,7 +149,7 @@
 					</button>
 				</h5>
 			</div>
-			<form action="<?= site_url('admin/changePassword') ?>" method="post" id="formChangePass">
+			<form action="<?= site_url('admin/changePasswordSekre')?>" method="post" id="formChangePass">
 				<div class="modal-body">
 					<input type="hidden" name="idAdmin" id="idAdminPass">
 					<div class="form-group">
@@ -164,7 +179,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="ubahAdminTitle">Delete Admin
+				<h5 class="modal-title" id="ubahAdminTitle">Delete Sekretaris
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -173,7 +188,7 @@
 			<div class="modal-body">
 				<p>Anda yakin ingin menghapus <b id="nameDelete">.</b> ?</p>
 			</div>
-			<form action="<?= site_url('admin/deleteAdmin') ?>" method="post">
+			<form action="<?= site_url('admin/deleteSekre') ?>" method="post">	
 				<input type="hidden" name="idAdmin" id="idAdminDel">
 				<div class="modal-footer">
 					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close">Tidak</button>
@@ -188,13 +203,13 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Buat Admin
+				<h5 class="modal-title">Buat Sekretaris
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeCreateModal">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</h5>
 			</div>
-			<form action="<?= site_url('admin/createAdmin') ?>" method="post" id="formCreate">
+			<form action="<?= site_url('admin/createSekre') ?>" method="post" id="formCreate">	
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="" class="form-control-label">Nama</label>
@@ -203,6 +218,21 @@
 					<div class="form-group">
 						<label for="" class="form-control-label">Username</label>
 						<input type="text" class="form-control" name="unameBaru" id="usernameBaru" required>
+					</div>
+					<div class="form-group">
+						<label for="" class="form-control-label">RW</label>
+						<select name="rw" id="rw" class="form-control">
+							<option value="1">RW 1</option>
+							<option value="2">RW 2</option>
+							<option value="3">RW 3</option>
+							<option value="4">RW 4</option>
+							<option value="5">RW 5</option>
+							<option value="6">RW 6</option>
+							<option value="7">RW 7</option>
+							<option value="8">RW 8</option>
+							<option value="9">RW 9</option>
+							<option value="10">RW 10</option>
+						</select>
 					</div>
 					<div class="form-group">
 						<label for="" class="form-control-label">Password</label>
@@ -215,7 +245,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close" id="closeCreate">Tutup</button>
-					<button type="submit" class="btn btn-success" id="submitCreate" disabled>Buat Admin</button>
+					<button type="submit" class="btn btn-success" id="submitCreate" disabled>Buat Sekretaris</button>
 				</div>
 			</form>
 		</div>
