@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 02, 2021 at 07:23 AM
+-- Generation Time: Jul 31, 2021 at 08:20 PM
 -- Server version: 5.7.33-0ubuntu0.16.04.1
 -- PHP Version: 5.6.40-50+ubuntu16.04.1+deb.sury.org+1
 
@@ -71,6 +71,8 @@ CREATE TABLE `user_admin` (
   `name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `type` int(1) NOT NULL,
+  `rw` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -79,10 +81,12 @@ CREATE TABLE `user_admin` (
 -- Dumping data for table `user_admin`
 --
 
-INSERT INTO `user_admin` (`id`, `name`, `username`, `password`, `created_at`, `updated_at`) VALUES
-(2, 'Admin 1', 'admin', '81dc9bdb52d04dc20036dbd8313ed055', '2021-06-24 19:55:15', '2021-06-24 19:55:15'),
-(3, 'Admin 2', 'admin2', '827ccb0eea8a706c4c34a16891f84e7b', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, 'Admin 3', 'admin3', '827ccb0eea8a706c4c34a16891f84e7b', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `user_admin` (`id`, `name`, `username`, `password`, `type`, `rw`, `created_at`, `updated_at`) VALUES
+(2, 'Admin 1', 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 1, NULL, '2021-06-24 19:55:15', '2021-06-24 19:55:15'),
+(3, 'Admin 2', 'admin2', '827ccb0eea8a706c4c34a16891f84e7b', 1, NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 'Admin 3', 'admin3', '827ccb0eea8a706c4c34a16891f84e7b', 1, NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 'Sekretaris 1', 'sekre1', '827ccb0eea8a706c4c34a16891f84e7b', 2, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(11, 'Sekretaris 2', 'sekre2', '827ccb0eea8a706c4c34a16891f84e7b', 2, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -110,7 +114,7 @@ CREATE TABLE `warga` (
 --
 
 INSERT INTO `warga` (`nik`, `password`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `stats_alamat`, `rt`, `rw`, `agama`, `bekerja`) VALUES
-('317506100200001', '81dc9bdb52d04dc20036dbd8313ed055', 'ALEX IVAN TOYONO', 'Jakarta', '2003-02-08', 'L', 'Taman Modern Blok B5 no  05', 0, 1, 6, 'Kristen Protestan', 1),
+('317506100200001', '81dc9bdb52d04dc20036dbd8313ed055', 'ALEX IVAN TOYONO', 'Jakarta', '2003-02-08', 'L', 'Taman Modern Blok B5 no  05', 0, 1, 6, 'Kristen Protestan', 0),
 ('317506100200002', '81dc9bdb52d04dc20036dbd8313ed055', 'ABDUL AZIZ', 'Jakarta', '2003-02-09', 'L', 'Taman Modern Blok B5 no  032', 0, 2, 6, 'Kristen Protestan', 1),
 ('317506100200003', '81dc9bdb52d04dc20036dbd8313ed055', 'YULIANA SUKARMO MADI ', 'Jakarta', '2001-02-10', 'P', 'Taman Modern Blok B3 no  017', 0, 3, 6, 'Kristen Protestan', 1),
 ('317506100200004', '81dc9bdb52d04dc20036dbd8313ed055', 'JOJO WAHYUDIH', 'Jakarta', '2001-02-11', 'L', 'Taman Modern Blok B3 no  017', 0, 10, 6, 'Islam', 1),
@@ -161,7 +165,7 @@ INSERT INTO `warga` (`nik`, `password`, `nama`, `tempat_lahir`, `tanggal_lahir`,
 ('317506100200049', '81dc9bdb52d04dc20036dbd8313ed055', 'EARLY BERLIAN', 'Jakarta', '2000-03-27', 'P', 'Jl. Irigasi ujung menteng', 0, 10, 4, 'Kristen Protestan', 0),
 ('317506100200050', '81dc9bdb52d04dc20036dbd8313ed055', 'DAVINA ESTER', 'Jakarta', '2000-03-28', 'P', 'Jl. Irigasi ujung menteng', 0, 9, 4, 'Kristen Protestan', 0),
 ('317506100200051', '81dc9bdb52d04dc20036dbd8313ed055', 'GARACE FIO  ALEXANDER', 'Jakarta', '2000-03-29', 'P', 'Jl. Irigasi ujung menteng', 0, 7, 4, 'Kristen Protestan', 1),
-('317506100200052', '81dc9bdb52d04dc20036dbd8313ed055', 'JESSIE JUANITA KHARISA', 'Jakarta', '2000-03-30', 'P', 'Metland Metnteng Blok N no 19', 0, 10, 5, 'Kristen Protestan', 1),
+('317506100200052', '81dc9bdb52d04dc20036dbd8313ed055', 'JESSIE JUANITA KHARISA', 'Jakarta', '2000-03-30', 'P', 'Metland Metnteng Blok N no 19', 0, 10, 5, 'Kristen Protestan', 0),
 ('317506100200053', '81dc9bdb52d04dc20036dbd8313ed055', 'ANNISA AYU SAPUTRI', 'Jakarta', '2000-03-31', 'P', 'Metland Metnteng Blok N no 34', 0, 1, 5, 'Islam', 1),
 ('317506100200054', '81dc9bdb52d04dc20036dbd8313ed055', 'NUR AMINAH SULASTRI', 'Jakarta', '2000-04-01', 'P', 'Metland Metnteng Blok N no 16', 0, 9, 5, 'Islam', 1),
 ('317506100200055', '81dc9bdb52d04dc20036dbd8313ed055', 'ANDIRA RAHMANIA', 'Jakarta', '2000-04-02', 'P', 'Metland Metnteng Blok N no 27', 0, 2, 5, 'Islam', 1),
@@ -209,7 +213,8 @@ INSERT INTO `warga` (`nik`, `password`, `nama`, `tempat_lahir`, `tanggal_lahir`,
 ('317506100200097', '81dc9bdb52d04dc20036dbd8313ed055', 'RUTNA THONG KHAO', 'Jakarta', '2000-05-14', 'P', 'Jl. Irigasi ujung menteng', 0, 7, 10, 'Hindu', 1),
 ('317506100200098', '81dc9bdb52d04dc20036dbd8313ed055', 'YUVATI JUSTINIANA SABLE', 'Jakarta', '2000-05-15', 'P', 'Jl. Irigasi ujung menteng', 0, 8, 10, 'Hindu', 1),
 ('317506100200099', '81dc9bdb52d04dc20036dbd8313ed055', 'IRENE TALITA BAHEERA', 'Jakarta', '2000-05-16', 'P', 'Jl. Irigasi ujung menteng', 0, 9, 10, 'Buddha', 0),
-('317506100200100', '81dc9bdb52d04dc20036dbd8313ed055', 'IMTITHAL GAURIKA', 'Jakarta', '2000-05-17', 'P', 'Jl. Irigasi ujung menteng', 0, 10, 10, 'Buddha', 0);
+('317506100200100', '81dc9bdb52d04dc20036dbd8313ed055', 'IMTITHAL GAURIKA', 'Jakarta', '2000-05-17', 'P', 'Jl. Irigasi ujung menteng', 0, 10, 10, 'Buddha', 0),
+('317506100200101', '827ccb0eea8a706c4c34a16891f84e7b', 'AZRUL FAHRII', 'Jakarta', '2000-07-12', 'L', 'Pulogadung', 0, 3, 1, '', 0);
 
 -- --------------------------------------------------------
 
@@ -231,7 +236,7 @@ CREATE TABLE `warga_additional` (
 --
 
 INSERT INTO `warga_additional` (`nik`, `cur_alamat`, `cur_rt`, `cur_rw`, `email`, `handphone`) VALUES
-('317506100200001', NULL, NULL, NULL, NULL, NULL),
+('317506100200001', NULL, NULL, NULL, '', ''),
 ('317506100200002', NULL, NULL, NULL, NULL, NULL),
 ('317506100200003', NULL, NULL, NULL, NULL, NULL),
 ('317506100200004', NULL, NULL, NULL, NULL, NULL),
@@ -330,7 +335,8 @@ INSERT INTO `warga_additional` (`nik`, `cur_alamat`, `cur_rt`, `cur_rw`, `email`
 ('317506100200097', NULL, NULL, NULL, NULL, NULL),
 ('317506100200098', NULL, NULL, NULL, NULL, NULL),
 ('317506100200099', NULL, NULL, NULL, NULL, NULL),
-('317506100200100', NULL, NULL, NULL, NULL, NULL);
+('317506100200100', NULL, NULL, NULL, NULL, NULL),
+('317506100200101', NULL, NULL, NULL, '', '');
 
 --
 -- Indexes for dumped tables
@@ -375,7 +381,7 @@ ALTER TABLE `warga_additional`
 -- AUTO_INCREMENT for table `history_work`
 --
 ALTER TABLE `history_work`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `solusi`
 --
@@ -385,7 +391,7 @@ ALTER TABLE `solusi`
 -- AUTO_INCREMENT for table `user_admin`
 --
 ALTER TABLE `user_admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
