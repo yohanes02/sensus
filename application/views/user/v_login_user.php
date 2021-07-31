@@ -49,7 +49,7 @@
 						<!-- <div class="card-footer"> -->
 						<div class="col-sm-12 col-xs-12 text-center">
 							<span class="text-muted">Login sebagai admin?</span>
-							<a href="<?php echo base_url() ?>authAdmin"" class="f-w-600 p-l-5">Login Admin</a>
+							<a href="<?php echo base_url() ?>authAdmin"" class="f-w-600 p-l-5">Login Admin atau Sekretaris</a>
 						</div>
 
 						<!-- </div> -->

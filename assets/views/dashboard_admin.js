@@ -153,17 +153,20 @@ var obj = {
 	
 				data.forEach(d => {
 					var percentage = parseFloat((d.total/(total/100)).toFixed(1));
-					var tipe;
+					var tipe, color;
 					if(d.bekerja == '0') {
 						$("#total-pengangguran").text(d.total);
 						tipe = 'Pengangguran';
+						color = "#FF5252";
 					} else {
 						$("#total-pekerja").text(d.total);
 						tipe = 'Pekerja';
+						color = "#4CAF50";
 					}
 					dataSeries.push({
 						name: tipe,
-						y: percentage
+						y: percentage,
+						color: color
 					});
 				});
 	

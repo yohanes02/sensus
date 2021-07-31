@@ -10,7 +10,7 @@
 							<img src="assets/images/logo-jkt.png" alt="logo" style="width: 50px;">
 						</div>
 						<h3 class="text-center txt-primary">
-							Masuk Admin
+							Masuk Admin atau Sekretaris
 						</h3>
 						<div class="row">
 							<!-- <form action="" method="post"> -->
