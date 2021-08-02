@@ -48,8 +48,8 @@
 						</div>
 						<!-- <div class="card-footer"> -->
 						<div class="col-sm-12 col-xs-12 text-center">
-							<span class="text-muted">Login sebagai admin atau sekretaris?</span>
-							<a href="<?php echo base_url() ?>authAdmin"" class="f-w-600 p-l-5">Login Admin atau Sekretaris</a>
+							<span class="text-muted">Login sebagai admin atau sekertariat?</span>
+							<a href="<?php echo base_url() ?>authAdmin"" class="f-w-600 p-l-5">Login Admin atau Sekertariat</a>
 						</div>
 
 						<!-- </div> -->

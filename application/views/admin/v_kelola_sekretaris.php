@@ -22,7 +22,7 @@
 					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-success"></i><span>Kelola Admin</span></a>
 				</li>
 				<li class="active treeview">
-					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekretaris</span></a>
+					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekertariat</span></a>
 				</li>
 			</ul>
 		</section>
@@ -31,7 +31,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="main-header">
-					<h4><span class="ti-settings"></span> Kelola Sekretaris</h4>
+					<h4><span class="ti-settings"></span> Kelola Sekertariat</h4>
 					<div style="float: right;">
 						<button class="btn btn-primary" data-toggle="modal" data-target="#create" data-backdrop="static" data-keyboard="false" style="margin-right: 20px;"><i class="ti-plus"></i> Tambah</button>
 					</div>
@@ -96,7 +96,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="ubahAdminTitle">Ubah Sekretaris
+				<h5 class="modal-title" id="ubahAdminTitle">Ubah Sekertariat
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -179,7 +179,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="ubahAdminTitle">Delete Sekretaris
+				<h5 class="modal-title" id="ubahAdminTitle">Delete Sekertariat
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -203,7 +203,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Buat Sekretaris
+				<h5 class="modal-title">Buat Sekertariat
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeCreateModal">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -245,7 +245,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-disable" data-dismiss="modal" aria-label="Close" id="closeCreate">Tutup</button>
-					<button type="submit" class="btn btn-success" id="submitCreate" disabled>Buat Sekretaris</button>
+					<button type="submit" class="btn btn-success" id="submitCreate" disabled>Buat Sekertariat</button>
 				</div>
 			</form>
 		</div>
