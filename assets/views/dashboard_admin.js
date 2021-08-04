@@ -156,11 +156,11 @@ var obj = {
 					var tipe, color;
 					if(d.bekerja == '0') {
 						$("#total-pengangguran").text(d.total);
-						tipe = 'Pengangguran';
+						tipe = 'Belum Bekerja';
 						color = "#FF5252";
 					} else {
 						$("#total-pekerja").text(d.total);
-						tipe = 'Pekerja';
+						tipe = 'Sudah Bekerja';
 						color = "#4CAF50";
 					}
 					dataSeries.push({

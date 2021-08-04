@@ -37,7 +37,7 @@
 			<div class="row dashboard-header">
 				<div class="col-lg-4 col-md-6">
 					<div class="card dashboard-product">
-						<h5 class="txt-disable">Warga >= 17 Tahun</h5 class="txt-disable">
+						<h5 class="txt-disable">Jumlah Data Warga</h5 class="txt-disable">
 						<h2 class="dashboard-total-products text-dark" id="total-data"></h2>
 						<span class="text-dark">Data yang sudah diinput masuk</span>
 						<div class="side-box btn btn-primary">
@@ -47,9 +47,9 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="card dashboard-product">
-						<h5 class="txt-disable">Pekerja</h5 class="txt-disable">
+						<h5 class="txt-disable">Warga Yang Bekerja</h5 class="txt-disable">
 						<h2 class="dashboard-total-products text-dark" id="total-pekerja"></h2>
-						<span class="text-dark">_</span>
+						<p style="color: transparent;">-</span>
 						<div class="side-box btn btn-success">
 							<i class="ti-user txt-white"></i>
 						</div>
@@ -57,9 +57,9 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="card dashboard-product">
-						<h5 class="txt-disable">Pengganguran</h5 class="txt-disable">
+						<h5 class="txt-disable">Warga Yang Belum Bekerja</h5 class="txt-disable">
 						<h2 class="dashboard-total-products text-dark" id="total-pengangguran"></h2>
-						<span class="text-dark">_</span>
+						<p style="color: transparent;">-</p>
 						<div class="side-box btn btn-danger">
 							<i class="ti-user txt-white"></i>
 						</div>
@@ -70,7 +70,7 @@
 				<div class="col-lg-6 col-md-6 col-xs-12">
 					<div class="card">
 						<div class="card-header">
-							<h5 style=" text-align: center">Persentase Pekerja & Pengganguran</h5>
+							<h5 style=" text-align: center">Persentase Warga Yang Belum & Sudah Bekerja</h5>
 						</div>
 						<div class="card-block">
 							<div id="pieSummary" style="min-width: 250px; height: 460px; margin: 0 auto;"></div>
@@ -80,7 +80,7 @@
 				<div class="col-lg-6 col-md-6 col-xs-12">
 				<div class="card">
 						<div class="card-header">
-							<h5 style=" text-align: center">Persentase Detail Pengganguran</h5>
+							<h5 style=" text-align: center">Persentase Detail Warga Yang Belum Bekerja</h5>
 						</div>
 						<div class="card-block">
 							<div id="pieDetail" style="min-width: 250px; height: 460px; margin: 0 auto;"></div>
