@@ -32,7 +32,7 @@
 			<div class="row">
 				<div class="main-header">
 					<h4><span class="ti-server"></span> Laporan</h4>
-					<div style="float: right;">
+					<div style="float: right; display: none;">
 						<a href="<?= site_url('admin/print_laporan') ?>" target="_blank">
 							<button class="btn btn-primary" style="margin-right: 20px;">Print</button>
 						</a>
