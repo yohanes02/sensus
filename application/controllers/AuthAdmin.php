@@ -36,7 +36,8 @@ class AuthAdmin extends CI_Controller
 
 		$data_session = array(
 			'id' => $admin['id'],
-			'nama' => $admin['username']
+			'nama' => $admin['username'],
+			'nama_user' => $admin['name']
 		);
 
 		

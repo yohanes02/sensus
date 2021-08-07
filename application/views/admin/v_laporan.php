@@ -22,7 +22,7 @@
 					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-success"></i><span>Kelola Admin</span></a>
 				</li>
 				<li class="treeview">
-					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekertariat</span></a>
+					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekretaris</span></a>
 				</li>
 			</ul>
 		</section>
@@ -41,12 +41,12 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<h5>Perbandingan pengangguran tiap RW</h5>
+					<h5>Perbandingan pengangguran tiap RW tiap tahun</h5>
 					<div class="card" style="padding: 10px;">
 						<div id="chartLurah"></div>
 					</div>
 					<div class="row">
-						<h5 class="col-md-12">Frekuensi Pekerja dan Penggangguran per RW</h5>
+						<h5 class="col-md-12">Perbandingan Pekerja dan Penggangguran per RW</h5>
 						<div class="col-md-4">
 							<div id="chart1" class="card" style="padding: 10px;"></div>
 						</div>
@@ -137,67 +137,6 @@
 												<?php } ?>
 											</tr>
 										<?php } ?>
-
-										<!-- <tr>
-									<td>RW 01</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 02</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 03</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 04</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 05</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 06</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 07</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 08</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 09</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr>
-								<tr>
-									<td>RW 10</td>
-									<td>10%</td>
-									<td>10%</td>
-									<td>5%</td>
-								</tr> -->
 									</tbody>
 								</table>
 							</div>

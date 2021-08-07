@@ -183,6 +183,12 @@ class Admin extends Core_Controller
 		$this->load->view('components/footer', $data);
 	}
 
+	public function getWargaByNik($nik) {
+		$data = $this->User_m->getDetailWarga($nik)->row_array();
+
+		echo json_encode($data);
+	}
+
 	public function updateWarga() {
 		$post = $this->input->post();
 		$nik = $post['nik'];

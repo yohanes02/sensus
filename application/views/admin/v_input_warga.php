@@ -8,7 +8,7 @@
 					<li class="dropdown">
 						<a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
 							<!-- <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span> -->
-							<span><?= $this->session->userdata['nama'] ?></span>
+							<span><?= $this->session->userdata['nama_user'] ?></span>
 							<!-- <span><?= $user['username'] ?></b> <i class=" icofont icofont-simple-down"></i></span> -->
 						</a>
 						<a href="<?= site_url('user/logout') ?>" role="button">
@@ -51,7 +51,7 @@
 					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-success"></i><span>Kelola Admin</span></a>
 				</li>
 				<li class="treeview">
-					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekertariat</span></a>
+					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekretaris</span></a>
 				</li>
 			</ul>
 		</section>
@@ -70,13 +70,13 @@
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="" class="form-control-label">NIK</label>
-											<input type="text" class="form-control" name="nik" value="" required>
+											<input type="text" class="form-control" name="nik" id="nik" value="" required>
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="" class="form-control-label">Nama</label>
-											<input type="text" class="form-control" name="nama" value="" required>
+											<input type="text" class="form-control" name="nama" id="nama" value="" required>
 										</div>
 									</div>
 									<div class="col-lg-6">

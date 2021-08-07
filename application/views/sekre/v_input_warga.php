@@ -8,7 +8,7 @@
 					<li class="dropdown">
 						<a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
 							<!-- <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span> -->
-							<span><b><?= $this->session->userdata['nama'] ?></b></span>
+							<span><b><?= $this->session->userdata['nama_user'] ?></b></span>
 							<!-- <span><?= $user['username'] ?></b> <i class=" icofont icofont-simple-down"></i></span> -->
 						</a>
 						<a href="<?= site_url('admin/logout') ?>" role="button">
@@ -55,7 +55,7 @@
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="" class="form-control-label">NIK</label>
-											<input type="text" class="form-control" name="nik" value="" required>
+											<input type="text" class="form-control" name="nik" id="nik" value="" required>
 										</div>
 									</div>
 									<div class="col-lg-6">

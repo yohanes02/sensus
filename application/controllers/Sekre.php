@@ -19,7 +19,7 @@ class Sekre extends Core_Controller
 			$this->session->unset_userdata('rt');
 		}
 		$data['user'] = $this->Admin_m->getAdminById($this->session->userdata('id'))->row_array();
-		$data['page'] = 'input_sekre';
+		$data['page'] = 'input_warga';
 		$this->load->view('components/header');
 		$this->load->view('sekre/v_input_warga', $data);
 		$this->load->view('components/footer', $data);

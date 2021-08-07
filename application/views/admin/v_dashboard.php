@@ -22,7 +22,7 @@
 					<a href="<?= base_url('admin/kelola_admin') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-success"></i><span>Kelola Admin</span></a>
 				</li>
 				<li class="treeview">
-					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekertariat</span></a>
+					<a href="<?= base_url('admin/kelola_sekretaris') ?>" class="waves-effecr waves-dark"><i class="ti-settings txt-warning"></i><span>Kelola Sekretaris</span></a>
 				</li>
 			</ul>
 		</section>
@@ -35,6 +35,13 @@
 				</div>
 			</div>
 			<div class="row dashboard-header">
+				<div class="col-md-12 col-sm-12">
+					<div class="card card-block">
+						<!-- <span> -->
+							<b>Info: </b><span>Data yang masuk adalah warga dengan usia >= 17 sampai <=35</span>
+						<!-- </span> -->
+					</div>
+				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="card dashboard-product">
 						<h5 class="txt-disable">Jumlah Data Warga</h5 class="txt-disable">

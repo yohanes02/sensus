@@ -7,7 +7,11 @@
 				<li class="dropdown">
 					<a href="#!" role="button">
 						<!-- <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span> -->
-						<span><b><?= $this->session->userdata('nama') ?></b> </span>
+						<?php if($this->session->userdata('tipe_user') == 'admin' || $this->session->userdata('tipe_user') == 'sekre') { ?>
+						<span><b><?= $this->session->userdata('nama_user') ?></b> </span>
+						<?php } else { ?>
+							<span><b><?= $this->session->userdata('nama') ?></b> </span>
+						<?php } ?>
 					</a>
 					<?php if ($this->session->userdata('tipe_user') == 'admin' || $this->session->userdata('tipe_user') == 'sekre') { ?>
 						<a href="<?= base_url('admin/logout') ?>" role="button">
