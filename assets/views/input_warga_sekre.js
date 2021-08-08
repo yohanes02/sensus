@@ -11,7 +11,7 @@ var obj = {
 				console.log("TEST");
 				$.ajax({
 					type: "ajax",
-					url: "getWargaByNik/"+nik,
+					url: "admin/getWargaByNik/"+nik,
 					dataType: "JSON",
 					success: function (data) {
 						console.log(data);

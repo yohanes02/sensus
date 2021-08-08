@@ -61,7 +61,7 @@
 									<div class="col-lg-6">
 										<div class="form-group">
 											<label for="" class="form-control-label">Nama</label>
-											<input type="text" class="form-control" name="nama" value="" required>
+											<input type="text" class="form-control" name="nama" id="nama" value="" required>
 										</div>
 									</div>
 									<div class="col-lg-6">

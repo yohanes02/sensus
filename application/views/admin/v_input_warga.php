@@ -11,7 +11,7 @@
 							<span><?= $this->session->userdata['nama_user'] ?></span>
 							<!-- <span><?= $user['username'] ?></b> <i class=" icofont icofont-simple-down"></i></span> -->
 						</a>
-						<a href="<?= site_url('user/logout') ?>" role="button">
+						<a href="<?= site_url('admin/logout') ?>" role="button">
 							<span><i class="icon-logout"></i> Logout</span>
 						</a>
 						<ul class="dropdown-menu settings-menu">
