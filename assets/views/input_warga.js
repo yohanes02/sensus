@@ -18,12 +18,22 @@ var obj = {
 						if(data != null) {
 							$("#nama").val(data.nama);
 							$("#tgl-lhr").val(data.tanggal_lahir);
+							$("#validNik").text("no");
 						}
 					},
 				});
 			} else {
 				$("#nama").val("");
 				$("#tgl-lhr").val("");
+				$("#validNik").text("yes");
+			}
+		});
+		$("#addWarga").click(function(e) {
+			if($("#validNik").text() == "no") {
+				alert("Error: NIK sudah ada dalam database");
+				return;
+			} else {
+				$("#submit").click();
 			}
 		});
 	},

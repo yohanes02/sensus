@@ -128,7 +128,9 @@
 								</div>
 							</div>
 							<div class="col-lg-12">
-								<button id="addWork" type="submit" class="btn btn-primary">Tambah Warga</button>
+								<span id="validNik" style="display: none;"></span>
+								<button id="addWarga" type="button" class="btn btn-primary">Tambah Warga</button>
+								<button id="submit" type="submit" value="" style="display: none;"></button>
 							</div>
 						</form>
 						<?php if ($this->session->userdata('wargaSaved')) { ?>
