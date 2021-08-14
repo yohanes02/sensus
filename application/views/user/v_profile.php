@@ -228,6 +228,12 @@
 												</div>
 											</div>
 										</div>
+										<div id="isNotWorking" style="<?php if($warga['bekerja']=='1') echo 'display:none'?>" class="col-lg-12">
+											<div class="form-group">
+												<label for="" class="form-control-label">Alasan Tidak Bekerja</label>
+												<textarea name="alasan_not_working" id="reasonNotWorking" class="form-control" cols="30" rows="5"><?=$warga['alasan']?></textarea>
+											</div>
+										</div>
 									</div>
 								</div>
 								<div class="col-lg-12" id="aksi">

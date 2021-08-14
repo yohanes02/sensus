@@ -93,6 +93,16 @@ var obj = {
 		$('#retypePassword').on('keyup', function(e) {
 			_this.checkIfPassSameModal();
 		});
+		$("#statusBekerja").change(function() {
+			console.log("CHANGE");
+			if($("#statusBekerja").val() == "0") {
+				document.getElementById("isNotWorking").style.display = "";
+				// $("#isNotWorking").hide();
+			} else {
+				document.getElementById("isNotWorking").style.display = "none";
+				// $("#isNotWorking").show();
+			}
+		});
 	}
 }
 

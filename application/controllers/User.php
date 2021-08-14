@@ -104,6 +104,10 @@ class User extends Core_Controller
 			$data['cur_rw'] = $input['cur_rw'];
 		}
 
+		if($input['statusBekerja'] == "0") {
+			$status['alasan'] = $input['alasan_not_working'];
+		}
+
 		// print_r($status);
 		// die();
 
