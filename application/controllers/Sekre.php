@@ -94,7 +94,7 @@ class Sekre extends Core_Controller
 	}
 
 	public function edit_warga($nik) {
-		$data['page'] = 'edit_berita';
+		$data['page'] = 'edit_warga';
 		$data['warga'] = $this->User_m->getDetailWarga($nik)->row_array();
 		$this->load->view('components/header');
 		$this->load->view('sekre/v_edit_warga', $data);
@@ -122,6 +122,10 @@ class Sekre extends Core_Controller
 			'rt'			=> $post['rt'],
 			'bekerja' => $post['bekerja']
 		];
+		
+		if($post['bekerja'] == "0") {
+			$data['alasan'] = $post['alasan_not_working'];
+		}
 
 		$this->Admin_m->updateWarga($data, $nik);
 
